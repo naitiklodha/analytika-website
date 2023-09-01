@@ -11,7 +11,7 @@ module.exports = {
         analytikaBlack: "#181818",
         analytikaYellow: "#F5EC4D",
         analytikaGreen: "#319E47",
-        analytikaCream: "#F7F1E5",
+        analytikaWhite: "#F7F1E5",
       },
     },
   },
