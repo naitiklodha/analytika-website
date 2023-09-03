@@ -1,17 +1,22 @@
 import Navbar from "@/components/Navbar";
+import Head from "next/head";
 
 export default function About() {
   return (
     <main className="bg-analytikaBlack min-h-screen">
+      <Head>
+        <title>About Analytika</title>
+        
+      </Head>
       <Navbar />
-      <section className="flex flex-col m-12 items-center justify-center text-center text-white">
+      <section className="flex flex-col m-8 items-center justify-center md:mx-24 text-white">
         <h1 className="uppercase text-4xl font-semibold mb-6">
           About{" "}
           <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-analytikaGreen to-analytikaYellow">
             Analytika
           </span>
         </h1>
-        <p className="mx-8 text-lg leading-relaxed">
+        <p className="mx-4 text-lg leading-relaxed">
           Analytika, founded by the visionary trio of Om Agrawal, Shreya Govil,
           and Vanshaj Ajmera, stands as a thriving and influential data science
           club at NMIMS (Narsee Monjee Institute of Management Studies). This
@@ -19,7 +24,7 @@ export default function About() {
           members, fostering an environment where the potential of data-driven
           insights is fully realized.
         </p>
-        <p className="mx-8 mt-4 text-lg leading-relaxed">
+        <p className="mx-4 mt-4 text-lg leading-relaxed">
           Flagship events like the Data Summit exemplify Analytika's commitment
           to excellence. This annual gathering brings together leading experts,
           data scientists, and students to delve into the latest trends,
@@ -27,7 +32,7 @@ export default function About() {
           as a forum for thought-provoking discussions, practical workshops, and
           inspirational keynote speeches.
         </p>
-        <p className="mx-8 mt-4 text-lg leading-relaxed">
+        <p className="mx-4 mt-4 text-lg leading-relaxed">
           Analytika's impact extends beyond the confines of traditional
           education. The club hosts interactive challenges, including the
           popular "Play Data," where participants are tasked with analyzing
@@ -37,7 +42,7 @@ export default function About() {
           engaging format.
         </p>
 
-        <p className="mx-8 mt-4 text-lg leading-relaxed">
+        <p className="mx-4 mt-4 text-lg leading-relaxed">
           In essence, Analytika is not just a club; it's a dynamic ecosystem
           where students are inspired, challenged, and equipped to become the
           data leaders of tomorrow. Through their efforts, they are not only

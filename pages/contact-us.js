@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <>
       <Navbar />
-      <section className="flex justify-around mt-8">
+      <section className="md:flex justify-around mt-8">
         <div>
           <h3 className="text-lg">Any queries?</h3>
           <h1 className="font-semibold text-6xl mb-8 text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
