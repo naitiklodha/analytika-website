@@ -11,14 +11,13 @@ const Navbar = () => {
   };
 
   const activeLinkClass =
-    "block py-2 pl-3 pr-4 text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow ";
+    "block py-2 pl-3 pr-4  text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow ";
 
   // Get the current route pathname
   const currentPathname = router.pathname;
 
   // Define an object that maps route paths to their respective labels
   const routeLabels = {
-    "/": "Home",
     "/about-us": "About Us",
     "/events": "Events",
     "/team": "Team",
@@ -81,7 +80,7 @@ const Navbar = () => {
           }`}
           id="navbar-default"
         >
-          <ul className="font-normal text-lg flex flex-col p-4 md:p-0 mt-4 border  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
+          <ul className="text-xl flex flex-col p-4 md:p-0 mt-4 border  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
             {Object.entries(routeLabels).map(([path, label]) => (
               <li key={path}>
                 <Link
