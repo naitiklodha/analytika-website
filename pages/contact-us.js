@@ -4,13 +4,13 @@ export default function Contact() {
   return (
     <>
       <Navbar />
-      <section className="md:flex justify-around mt-8">
-        <div>
-          <h3 className="text-lg">Any queries?</h3>
-          <h1 className="font-semibold text-6xl mb-8 text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
+      <section className="md:flex md:justify-center mt-8">
+        <div className="max-w-md mx-auto md:max-w-xl md:mx-0 md:mr-16">
+          <h3 className="text-lg text-center md:text-left">Any queries?</h3>
+          <h1 className="font-semibold text-4xl md:text-6xl mt-4 text-center md:text-left text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
             CONTACT US
           </h1>
-          <div className="flex p-4 border-2 border-gray-200 rounded-md">
+          <div className="flex flex-col md:flex-row items-center md:items-start p-4 border-2 border-gray-200 rounded-md mt-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -26,25 +26,30 @@ export default function Contact() {
             <h3 className="ml-4 text-lg">dscnmims@gmail.com</h3>
           </div>
         </div>
-        <div className="text-md flex flex-col">
-          <input
-            type="text"
-            placeholder="Name"
-            className="border-gray-200 bg-transparent border-2 rounded-md p-2 m-2"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="border-gray-200 bg-transparent border-2 rounded-md p-2 m-2"
-          ></input>
-          <textarea
-            placeholder="Message"
-            className="border-gray-200 bg-transparent border-2 rounded-md p-2 m-2"
-          ></textarea>
-          <input
-            type="submit"
-            className="p-4 bg-gradient-to-tr from-analytikaGreen to bg-analytikaYellow rounded-lg"
-          ></input>
+        <div className="max-w-md mt-6 md:w-1/2 md:mt-0">
+          <form className="text-md flex flex-col">
+            <input
+              type="text"
+              placeholder="Name"
+              className="border-gray-200 bg-transparent border-2 rounded-md p-3 mb-4"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="border-gray-200 bg-transparent border-2 rounded-md p-3 mb-4"
+            />
+            <textarea
+              placeholder="Message"
+              rows="4"
+              className="border-gray-200 bg-transparent border-2 rounded-md p-3 mb-4"
+            ></textarea>
+            <button
+              type="submit"
+              className="p-4 bg-gradient-to-tr from-analytikaGreen to bg-analytikaYellow rounded-lg text-white hover:shadow-md transition duration-300"
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </section>
     </>

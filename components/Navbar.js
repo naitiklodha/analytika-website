@@ -11,12 +11,10 @@ const Navbar = () => {
   };
 
   const activeLinkClass =
-    "block py-2 pl-3 pr-4  text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow ";
+    "block py-2 pl-3 pr-4 text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow";
 
-  // Get the current route pathname
   const currentPathname = router.pathname;
 
-  // Define an object that maps route paths to their respective labels
   const routeLabels = {
     "/about-us": "About Us",
     "/events": "Events",
@@ -25,15 +23,18 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    // Update the active element when the route changes
     const handleRouteChange = (url) => {
-      currentPathname !== url && setMenuOpen(false);
+      if (currentPathname !== url) {
+        setMenuOpen(false);
+      }
     };
 
-    router.events.on("routeChangeComplete", handleRouteChange);
+    const routeChangeCompleteListener = "routeChangeComplete";
+
+    router.events.on(routeChangeCompleteListener, handleRouteChange);
 
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
+      router.events.off(routeChangeCompleteListener, handleRouteChange);
     };
   }, [currentPathname]);
 
@@ -51,9 +52,8 @@ const Navbar = () => {
         </Link>
         <button
           onClick={toggleMenu}
-          data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="navbar-default"
           aria-expanded={menuOpen ? "true" : "false"}
         >
@@ -80,19 +80,20 @@ const Navbar = () => {
           }`}
           id="navbar-default"
         >
-          <ul className="text-xl flex flex-col p-4 md:p-0 mt-4 border  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
+          <ul className="text-xl flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
             {Object.entries(routeLabels).map(([path, label]) => (
               <li key={path}>
-                <Link
-                  href={path}
-                  className={
-                    currentPathname === path
-                      ? `${activeLinkClass}`
-                      : "block py-2 pl-3 pr-4"
-                  }
-                  aria-current={currentPathname === path ? "page" : undefined}
-                >
-                  {label}
+                <Link href={path}>
+                  <p
+                    className={
+                      currentPathname === path
+                        ? `${activeLinkClass}`
+                        : "block py-2 pl-3 pr-4"
+                    }
+                    aria-current={currentPathname === path ? "page" : undefined}
+                  >
+                    {label}
+                  </p>
                 </Link>
               </li>
             ))}
