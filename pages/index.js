@@ -7,7 +7,8 @@ import About from "@/components/sections/about-us";
 import Events from "@/components/sections/events";
 import TeamPage from "@/components/sections/team";
 import ContactUs from "@/components/sections/contact-us";
-import events from "@/data/eventData";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ teamMembers,events }) {
