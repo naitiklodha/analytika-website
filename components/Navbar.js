@@ -16,7 +16,7 @@ const Navbar = () => {
   const currentPathname = router.pathname;
 
   const routeLabels = {
-    "/about-us": "About Us",
+    "/#about-us": "About Us",
     "/events": "Events",
     "/team": "Team",
     "/contact-us": "Contact Us",
@@ -83,7 +83,7 @@ const Navbar = () => {
           <ul className="text-xl flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
             {Object.entries(routeLabels).map(([path, label]) => (
               <li key={path}>
-                <Link href={path}>
+                <Link href={path} >
                   <p
                     className={
                       currentPathname === path

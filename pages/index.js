@@ -1,19 +1,16 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { groq } from "next-sanity";
+import sanityClient from "@/data/client";
 import Navbar from "@/components/Navbar";
-
+import About from "@/components/sections/about-us";
+import Events from "@/components/sections/events";
+import TeamPage from "@/components/sections/team";
+import ContactUs from "@/components/sections/contact-us";
+import events from "@/data/eventData";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
-  // Sample gallery images from Unsplash
-  const galleryImages = [
-    "\https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1539&q=80",
-    "\https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80",
-    "\https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1539&q=80",
-    "\https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80",
-    "\https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1539&q=80",
-  ];
-
+export default function Home({ teamMembers,events }) {
   return (
     <main className={`min-h-screen bg-analytikaBlack ${inter.className}`}>
       <Navbar />
@@ -35,22 +32,41 @@ export default function Home() {
           alt="illustration"
         />
       </section>
-
-      {/* Gallery Section */}
-      <section className="py-8">
-        <div className="container mx-auto">
-          <div className="font-extrabold text-5xl my-4 text-center text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
-            GALLERY
-          </div>
-          <div className="grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="relative overflow-hidden m-2">
-                <Image src={image} width={400} height={300} alt={`Image ${index}`} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <About />
+      <Events events={events}/>
+      <TeamPage teamMembers={teamMembers} />
+      <ContactUs />
     </main>
   );
+}
+export async function getStaticProps() {
+  // Fetch team members from Sanity
+  const query = groq`*[_type == "team"]{_id, name, position, department, role, "image": image.asset->}`;
+  const teamMembers = await sanityClient.fetch(query);
+  const Eventquery = `*[_type == 'events'] {
+    name,
+    description,
+    image {
+      asset-> {
+        _id,
+        url
+      },
+      alt
+    },
+    gallery {
+      asset-> {
+        _id,
+        url
+      },
+      alt
+    }
+  }`;
+
+  const events = await sanityClient.fetch(Eventquery);
+  return {
+    props: {
+      teamMembers,
+      events,
+    },
+  };
 }

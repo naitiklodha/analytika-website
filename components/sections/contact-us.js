@@ -1,10 +1,7 @@
-import Navbar from "@/components/Navbar";
-
 export default function Contact() {
   return (
     <>
-      <Navbar />
-      <section className="md:flex md:justify-center mt-8">
+      <section className="md:flex md:justify-center mt-16">
         <div className="max-w-md mx-auto md:max-w-xl md:mx-0 md:mr-16">
           <h3 className="text-lg text-center md:text-left">Any queries?</h3>
           <h1 className="font-semibold text-4xl md:text-6xl mt-4 text-center md:text-left text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
