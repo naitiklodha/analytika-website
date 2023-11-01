@@ -6,7 +6,7 @@ import sanityClient from "@/data/client"; // Import your Sanity client
 
 export default function Events({ events }) {
   return (
-    <div className="max-w-screen-lg mx-auto p-4">
+    <div className="max-w-screen-lg mx-auto p-4" id="events">
       <h1 className="text-4xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow my-6">
         EVENTS
       </h1>
