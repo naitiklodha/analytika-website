@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { groq } from "next-sanity";
+import localFont from 'next/font/local'
 import sanityClient from "@/data/client";
 import Navbar from "@/components/Navbar";
 import About from "@/components/sections/about-us";
@@ -10,10 +11,11 @@ import ContactUs from "@/components/sections/contact-us";
 
 
 const inter = Inter({ subsets: ["latin"] });
+const myFont = localFont({src:"./coolvetica rg.ttf"});
 
 export default function Home({ teamMembers,events }) {
   return (
-    <main className={`min-h-screen bg-analytikaBlack ${inter.className}`}>
+    <main className={`min-h-screen bg-analytikaBlack ${myFont.className} `}>
       <Navbar />
       <section className="flex flex-col-reverse mt-8 md:flex-row justify-around">
         <h1 className="text-6xl font-extrabold mt-12 md:mt-20 ml-10 tracking-wide mb-6 md:mb-0">

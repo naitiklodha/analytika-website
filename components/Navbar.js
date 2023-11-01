@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import localFont from "next/font/local";
+
+const myFont = localFont({ src: "./coolvetica condensed rg.ttf" });
 
 const Navbar = () => {
   const router = useRouter();
@@ -17,9 +20,9 @@ const Navbar = () => {
 
   const routeLabels = {
     "/#about-us": "About Us",
-    "/events": "Events",
-    "/team": "Team",
-    "/contact-us": "Contact Us",
+    "/#events": "Events",
+    "/#team": "Team",
+    "/#contact-us": "Contact Us",
   };
 
   useEffect(() => {
@@ -39,7 +42,7 @@ const Navbar = () => {
   }, [currentPathname]);
 
   return (
-    <nav className="">
+    <nav className={myFont.className}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/">
           <p className="flex items-center">
@@ -83,7 +86,7 @@ const Navbar = () => {
           <ul className="text-xl flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
             {Object.entries(routeLabels).map(([path, label]) => (
               <li key={path}>
-                <Link href={path} >
+                <Link href={path}>
                   <p
                     className={
                       currentPathname === path

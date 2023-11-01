@@ -9,6 +9,9 @@ export default withMT({
   ],
   theme: {
     extend: {
+      fontFamily: {
+        coolvetica: ["Coolvetica", "sans"],
+      },
       colors: {
         analytikaBlack: "#181818",
         analytikaYellow: "#F5EC4D",

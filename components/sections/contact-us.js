@@ -1,13 +1,13 @@
 export default function Contact() {
   return (
     <>
-      <section className="md:flex md:justify-center mt-16">
-        <div className="max-w-md mx-auto md:max-w-xl md:mx-0 md:mr-16">
+      <section className="md:flex md:justify-center mt-16" id="contact-us">
+        <div className="max-w-md mx-6 md:max-w-xl md:mx-0 md:mr-16">
           <h3 className="text-lg text-center md:text-left">Any queries?</h3>
           <h1 className="font-semibold text-4xl md:text-6xl mt-4 text-center md:text-left text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
             CONTACT US
           </h1>
-          <div className="flex flex-col md:flex-row items-center md:items-start p-4 border-2 border-gray-200 rounded-md mt-6">
+          <div className="flex   items-center md:items-start p-4 border-2 border-gray-200 rounded-md mt-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -23,7 +23,7 @@ export default function Contact() {
             <h3 className="ml-4 text-lg">dscnmims@gmail.com</h3>
           </div>
         </div>
-        <div className="max-w-md mt-6 md:w-1/2 md:mt-0">
+        <div className="max-w-md mx-6 md:mx-2 mt-6 md:w-1/2 md:mt-0">
           <form className="text-md flex flex-col">
             <input
               type="text"

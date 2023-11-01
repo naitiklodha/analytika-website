@@ -3,6 +3,7 @@ import sanityClient from "@/data/client";
 import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
 
+
 const TeamPage = ({ teamMembers }) => {
   const [selectedPosition, setSelectedPosition] = useState("All");
   const uniquePositions = Array.from(
@@ -11,8 +12,8 @@ const TeamPage = ({ teamMembers }) => {
 
   return (
     <div className="flex flex-col items-center justify-center uppercase">
-      <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow my-6">
-        Team Members
+      <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow my-6">
+        Team ANALYTIKA
       </h1>
       <div className="flex flex-wrap gap-4">
         <div

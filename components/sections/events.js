@@ -7,6 +7,9 @@ import sanityClient from "@/data/client"; // Import your Sanity client
 export default function Events({ events }) {
   return (
     <div className="max-w-screen-lg mx-auto p-4">
+      <h1 className="text-4xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow my-6">
+        EVENTS
+      </h1>
       <Carousel className="rounded-xl">
         {events.map((event, index) => {
           const imageProps = useNextSanityImage(sanityClient, event.image);
@@ -47,5 +50,3 @@ export default function Events({ events }) {
     </div>
   );
 }
-
-
