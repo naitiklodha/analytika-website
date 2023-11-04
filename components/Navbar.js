@@ -22,6 +22,7 @@ const Navbar = () => {
 	const routeLabels = {
 		"/#about-us": "About Us",
 		"/#events": "Events",
+		'/#blogs': "Blogs",
 		"/#team": "Team",
 		"/#contact-us": "Contact Us",
 	};
@@ -44,7 +45,7 @@ const Navbar = () => {
 
 	return (
 		<nav className={myFont.className}>
-			<div className="max-w-screen flex flex-wrap items-center justify-between mx-auto p-4">
+			<div className="max-w-screen flex flex-wrap items-center text-analytikaWhite justify-between mx-auto p-4">
 				<Link href="/">
 					<p className="flex items-center uppercase text-3xl tracking-wider font-normal">
 						<Image
@@ -88,7 +89,7 @@ const Navbar = () => {
 					} duration-100 `}
 					id="navbar-default"
 				>
-					<ul className=" text-xl md:text-3xl flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
+					<ul className=" text-xl text-analytikaWhite md:text-3xl flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
 						{Object.entries(routeLabels).map(([path, label]) => (
 							<li key={path}>
 								<Link href={path}>
