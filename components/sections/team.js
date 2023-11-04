@@ -12,8 +12,8 @@ const TeamPage = ({ teamMembers }) => {
 
   return (
     <div className="flex flex-col items-center justify-center uppercase" id="team">
-      <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow my-6">
-        Team ANALYTIKA
+      <h1 className="text-4xl font-extrabold  my-6">
+        Our <span className="text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">Team</span>
       </h1>
       <div className="flex flex-wrap gap-4">
         <div

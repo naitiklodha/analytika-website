@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import localFont from "next/font/local";
+import Image from "next/image";
 
 const myFont = localFont({ src: "./coolvetica condensed rg.ttf" });
 
@@ -46,9 +47,11 @@ const Navbar = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/">
           <p className="flex items-center">
-            <img
-              src="logo.svg"
+            <Image
+              src="/logo.svg"
               className="h-16 mr-3 mt-4"
+              width={64}
+              height={64}
               alt="Analytika Logo"
             />
           </p>
@@ -91,7 +94,7 @@ const Navbar = () => {
                     className={
                       currentPathname === path
                         ? `${activeLinkClass}`
-                        : "block py-2 pl-3 pr-4"
+                        : `block py-2 pl-3 pr-4 hover:text-analytikaGreen`
                     }
                     aria-current={currentPathname === path ? "page" : undefined}
                   >
