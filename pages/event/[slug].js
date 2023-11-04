@@ -8,8 +8,8 @@ export default function EventPage({ event }) {
     <>
       <Navbar />
 
-      <div className="bg-analytikaBlack  py-4 flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-extrabold uppercase mb-4 text-transparent bg-clip-text bg-gradient-to-r from-analytikaGreen to-analytikaYellow">
+      <div className="py-4 flex flex-col items-center justify-center text-white">
+        <h1 className="text-4xl font-extrabold uppercase mb-4 text-transparent bg-clip-text">
           {event.name}
         </h1>
 
@@ -29,29 +29,17 @@ export default function EventPage({ event }) {
           ))}
         </Carousel>
 
-        <div className="text-white flex rounded-md p-8 border-2 border-white text-xl mx-4 md:mx-16">
-          <div className="mx-16 flex-col items-center justify-center">
-            <FaCalendar
-              className="mb-4 text-analytikaGreen"
-              size={48}
-              color="analytikaYellow"
-            />
+        <div className="flex flex-wrap justify-center p-4 md:p-8 bg-gradient-to-r from-analytikaYellow to-analytikaGreen  ">
+          <div className="text-center mb-4 md:w-1/3">
+            <FaCalendar className="mb-4 text-analytikaGreen" size={48} color="analytikaYellow" />
             <div className="text-analytikaYellow">{event.date}</div>
           </div>
-          <div className="mx-16 flex-col items-center justify-center">
-            <FaClock
-              className="mb-4 text-analytikaGreen"
-              size={48}
-              color="analytikaYellow"
-            />
+          <div className="text-center mb-4 md:w-1/3">
+            <FaClock className="mb-4 text-analytikaGreen" size={48} color="analytikaYellow" />
             <div className="text-analytikaYellow">{event.time}</div>
           </div>
-          <div className="mx-16 flex-col items-center justify-center">
-            <FaMapMarkerAlt
-              className="mb-4 text-analytikaGreen"
-              size={48}
-              color="analytikaYellow"
-            />
+          <div className="text-center mb-4 md:w-1/3">
+            <FaMapMarkerAlt className="mb-4 text-analytikaGreen" size={48} color="analytikaYellow" />
             <div className="text-analytikaYellow">{event.venue}</div>
           </div>
         </div>
@@ -60,6 +48,9 @@ export default function EventPage({ event }) {
     </>
   );
 }
+
+
+
 
 export async function getStaticPaths() {
   const events = await fetchEventData();
