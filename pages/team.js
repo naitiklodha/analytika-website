@@ -15,12 +15,13 @@ const TeamPage = ({ teamMembers }) => {
   const customRoleOrder = {
     "Faculty Mentor": 0,
     "Co-Founder": 1,
-    President: 2,
+    "President": 2,
     "Joint President": 3,
     "Secretary": 4,
-    "Vice President": 5,
-    "Head": 6,
-    "Sub Head": 7,
+    "Treasurer":5,
+    "Vice President": 6,
+    "Head": 7,
+    "Sub Head": 8,
   };
 
   // Sort the teamMembers array based on the custom role order
