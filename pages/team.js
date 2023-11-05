@@ -3,6 +3,7 @@ import { useState } from "react";
 import sanityClient from "@/data/client";
 import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
+import Head from "next/head";
 import Navbar from "@/components/Navbar";
 
 const TeamPage = ({ teamMembers }) => {

@@ -2,6 +2,7 @@ import sanityClient from "@/data/client";
 import { Carousel } from "@material-tailwind/react";
 import { FaCalendar, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
+import Head from "next/head";
 
 export default function EventPage({ event }) {
   if (!event) {
