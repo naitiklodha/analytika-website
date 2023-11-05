@@ -7,3 +7,16 @@ body {
   color: white;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:linear-gradient(45deg,#319E47,#F5EC4D);
+  border-radius: 15px;
+}
+
+

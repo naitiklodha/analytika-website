@@ -17,7 +17,12 @@ export default function EventPage({ event }) {
           {event.name}
         </h1>
 
-        <Carousel className="rounded-lg mb-6 w-4/5" transition={{ duration: 2 }} loop autoplay>
+        <Carousel
+          className="rounded-lg mb-6 w-4/5"
+          transition={{ duration: 2 }}
+          loop
+          autoplay
+        >
           {event.gallery.map((image, index) => (
             <img
               key={image} // Use a more stable key if possible
@@ -29,14 +34,13 @@ export default function EventPage({ event }) {
         </Carousel>
 
         <div className="text-white flex justify-evenly rounded-md p-6 mx-8 bg-gradient-to-tr from-analytikaGreen to-analytikaYellow text-xl md:mx-16">
-     
           <div className="mx-2 md:mx-16 flex-col items-center justify-center">
             <FaCalendar className="mb-4" size={48} />
-            <div >{event.date}</div>
+            <div>{event.date}</div>
           </div>
           <div className="mx-2 md:mx-16 flex-col items-center justify-center">
-            <FaClock className="mb-4"  size={48}  />
-            <div >{event.time}</div>
+            <FaClock className="mb-4" size={48} />
+            <div>{event.time}</div>
           </div>
           <div className="mx-2 md:mx-16 flex-col items-center justify-center">
             <FaMapMarkerAlt className="mb-4" size={48} />
@@ -44,7 +48,7 @@ export default function EventPage({ event }) {
           </div>
         </div>
 
-        <p className="text-white mt-8 mx-4 md:mx-16">{event.description}</p>
+        <p className="text-white my-8 mx-8 md:mx-16">{event.description}</p>
       </div>
     </>
   );
