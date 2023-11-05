@@ -17,9 +17,9 @@ const TeamPage = ({ teamMembers }) => {
     "Co-Founder": 1,
     President: 2,
     "Joint President": 3,
-    Secretary: 4,
+    "Secretary": 4,
     "Vice President": 5,
-    Head: 6,
+    "Head": 6,
     "Sub Head": 7,
   };
 
