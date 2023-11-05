@@ -81,7 +81,7 @@ const TeamPage = ({ teamMembers }) => {
             </div>
           ))}
         </div>
-        <ul className="flex flex-wrap justify-center mt-6 mx-10">
+        <ul className="flex flex-wrap justify-center mt-6 md:mx-16">
           {teamMembers.map((member) => {
             const imageProps = useNextSanityImage(sanityClient, member.image);
 
@@ -90,11 +90,11 @@ const TeamPage = ({ teamMembers }) => {
               member.position === selectedPosition
             ) {
               return (
-                <li key={member._id} className="m-4 mx-8 rounded-lg">
+                <li key={member._id} className="m-4 mx-12 rounded-lg">
                   {member.image && (
                     <Image
                       {...imageProps}
-                      className="w-64 h-auto mx-auto rounded-xl" // Set the width to 100% to occupy full width
+                      className="w-64 h-auto mx-auto rounded-xl" 
                       alt={member.image.alt || ""}
                     />
                   )}
