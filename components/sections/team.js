@@ -29,12 +29,12 @@ const TeamPage = ({ teamMembers }) => {
           return (
             <li
               key={member._id}
-              className="m-4 mx-8 rounded-lg transition-transform hover:scale-105"
+              className="m-4 mx-8 rounded-xl transition-transform hover:scale-105"
             >
               {member.image && (
                 <Image
                   {...imageProps}
-                  className="w-64 h-auto mx-auto"
+                  className="w-64 h-auto mx-auto rounded-lg"
                   alt={member.image.alt || ""}
                 />
               )}

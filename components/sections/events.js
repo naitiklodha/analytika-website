@@ -28,7 +28,7 @@ function EventCard({ event }) {
           <div className="w-3/4 text-center md:w-2/4">
             <Typography
               variant="h1"
-              className="mb-4 font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow"
+              className="mb-4 font-semibold leading-tight text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow"
             >
               {event.name}
             </Typography>

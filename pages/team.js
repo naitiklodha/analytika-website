@@ -35,7 +35,7 @@ const TeamPage = ({ teamMembers }) => {
             Team
           </span>
         </h1>
-        <div className="flex flex-wrap gap-4 overflow-x-scroll">
+        <div className="flex flex-wrap gap-4 justify-center">
           <div
             onClick={() => setSelectedPosition("All")}
             className={`px-4 py-2 text-xl rounded-md hover:cursor-pointer border-analytikaYellow hover:bg-analytikaGreentransition duration-300 ease-in-out ${
@@ -74,7 +74,7 @@ const TeamPage = ({ teamMembers }) => {
                   {member.image && (
                     <Image
                       {...imageProps}
-                      className="w-64 h-auto mx-auto" // Set the width to 100% to occupy full width
+                      className="w-64 h-auto mx-auto rounded-xl" // Set the width to 100% to occupy full width
                       alt={member.image.alt || ""}
                     />
                   )}

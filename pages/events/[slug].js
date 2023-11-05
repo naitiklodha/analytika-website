@@ -12,7 +12,7 @@ export default function EventPage({ event }) {
     <>
       <Navbar />
 
-      <div className="py-4 flex flex-col items-center justify-center">
+      <div className="py-4 flex flex-col items-center justify-center md:mx-8">
         <h1 className="text-4xl font-extrabold uppercase mb-4 text-transparent bg-clip-text bg-gradient-to-r from-analytikaGreen to-analytikaYellow">
           {event.name}
         </h1>
@@ -42,13 +42,13 @@ export default function EventPage({ event }) {
             <FaClock className="mb-4" size={48} />
             <div>{event.time}</div>
           </div>
-          <div className="mx-2 md:mx-16 flex-col items-center justify-center">
+          <div className="mx-2 md:mx-16 flex-col max-w-[15ch] items-center justify-center">
             <FaMapMarkerAlt className="mb-4" size={48} />
             <div>{event.venue}</div>
           </div>
         </div>
 
-        <p className="text-white my-8 mx-8 md:mx-16">{event.description}</p>
+        <p className="text-white text-xl my-8 mx-8 md:mx-16">{event.description}</p>
       </div>
     </>
   );
