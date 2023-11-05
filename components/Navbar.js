@@ -50,7 +50,7 @@ const Navbar = () => {
           <p className="flex items-center uppercase text-3xl md:ml-4 tracking-wider font-normal">
             <Image
               src="/logo.svg"
-              className="w-fit h-16 mr-3 mt-4"
+              className="w-16 h-16 mr-3 mt-4"
               width={0}
               height={0}
               sizes="100vw"
