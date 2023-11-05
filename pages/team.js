@@ -74,7 +74,7 @@ const TeamPage = ({ teamMembers }) => {
                   {member.image && (
                     <Image
                       {...imageProps}
-                      className="w-48 h-auto mx-auto" // Set the width to 100% to occupy full width
+                      className="w-64 h-auto mx-auto" // Set the width to 100% to occupy full width
                       alt={member.image.alt || ""}
                     />
                   )}
