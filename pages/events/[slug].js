@@ -7,10 +7,28 @@ export default function EventPage({ event }) {
   if (!event) {
     return <div>No event data found.</div>;
   }
-
+  const pageTitle = event.name;
+  const pageDescription =event.description;
+  const ogImageUrl = "analytika-team.jpeg";
+  const siteUrl = "https://analytika-web.netlify.app/";
   return (
     <>
+          <Head>
+        {/* Title */}
+        <title>{pageTitle}</title>
+
+        {/* Meta tags */}
+        <meta name="description" content={pageDescription} />
+
+        {/* Open Graph (OG) tags for social media sharing */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:type" content="website" />
+      </Head>
       <Navbar />
+
 
       <div className="py-4 flex flex-col items-center justify-center md:mx-8">
         <h1 className="text-4xl font-extrabold uppercase mb-4 text-transparent bg-clip-text bg-gradient-to-r from-analytikaGreen to-analytikaYellow">
@@ -25,7 +43,7 @@ export default function EventPage({ event }) {
         >
           {event.gallery.map((image, index) => (
             <img
-              key={image} // Use a more stable key if possible
+              key={image} 
               src={image}
               alt={`Event Image ${index}`}
               className="w-full h-80 rounded-lg shadow-md"

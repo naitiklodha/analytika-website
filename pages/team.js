@@ -24,9 +24,27 @@ const TeamPage = ({ teamMembers }) => {
 
   // Sort the teamMembers array based on the custom role order
   teamMembers.sort((a, b) => customRoleOrder[a.role] - customRoleOrder[b.role]);
+  const pageTitle = "Team Analytika";
+  const pageDescription =
+    "This is team Analytika Page designed and developed by Naitik";
+  const ogImageUrl = "analytika-team.jpeg";
+  const siteUrl = "https://analytika-web.netlify.app/";
 
   return (
     <>
+      <Head>
+        <title>{pageTitle}</title>
+
+        {/* Meta tags */}
+        <meta name="description" content={pageDescription} />
+
+        {/* Open Graph (OG) tags for social media sharing */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:type" content="website" />
+      </Head>
       <Navbar />
       <div className="flex flex-col items-center justify-center uppercase ">
         <h1 className="text-4xl font-extrabold  my-6">
