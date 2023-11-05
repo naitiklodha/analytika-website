@@ -28,7 +28,7 @@ const TeamPage = ({ teamMembers }) => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col items-center justify-center uppercase mx-20">
+      <div className="flex flex-col items-center justify-center uppercase ">
         <h1 className="text-4xl font-extrabold  my-6">
           Our{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
