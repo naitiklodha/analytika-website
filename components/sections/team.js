@@ -5,14 +5,18 @@ import Image from "next/image";
 
 const TeamPage = ({ teamMembers }) => {
   const filteredTeamMembers = teamMembers.filter((member) =>
-    ["Faculty Mentor", "Co-Founder", "President"].includes(member.role)
+    ["President", "Vice President"].includes(member.role)
   );
-  const customRoleOrder = {
-    "Faculty Mentor": 0,
-    "Co-Founder": 1,
-    "President": 2,
-  };
-  teamMembers.sort((a, b) => customRoleOrder[a.role] - customRoleOrder[b.role]);
+
+  filteredTeamMembers.sort((a, b) => {
+    if (a.role === "President" && b.role === "Vice President") {
+      return -1;
+    }
+    if (a.role === "Vice President" && b.role === "President") {
+      return 1;
+    }
+    return 0;
+  });
 
   return (
     <div

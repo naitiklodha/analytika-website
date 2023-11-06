@@ -23,7 +23,7 @@ export default function Contact() {
 		  </div>
 		</div>
 		<div className="max-w-md mx-6 md:mx-2 mt-6 md:w-1/2 md:mt-0">
-		  <form className="text-md flex flex-col">
+		  <form className="text-md flex flex-col" netlify>
 			<input
 			  type="text"
 			  placeholder="Name: John Doe"

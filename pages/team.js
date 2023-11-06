@@ -1,31 +1,33 @@
-import { groq } from "next-sanity";
-import { useState } from "react";
+import Link from "next/link";
 import sanityClient from "@/data/client";
+import { useState } from "react";
 import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
+import { groq } from "next-sanity";
 
 const TeamPage = ({ teamMembers }) => {
-  const [selectedPosition, setSelectedPosition] = useState("All");
+  const [selectedPosition, setSelectedPosition] = useState("Super Core");
   const uniquePositions = Array.from(
     new Set(teamMembers.map((member) => member.position))
   );
 
   const customRoleOrder = {
-    "Faculty Mentor": 0,
-    "Co-Founder": 1,
-    "President": 2,
-    "Joint President": 3,
-    "Vice President": 4,
-    "Secretary": 5,
-    "Treasurer":6, 
-    "Head": 7,
-    "Sub Head": 8,
+    "President": 0,
+    "Joint President":1,
+    "Vice President": 2,
+    "Secretary": 3,
+    "Treasurer": 4,
+    "Head": 5,
+    "Sub Head": 6,
+    "Co-Founder":7,
+    "Faculty Mentor":8,
   };
 
   // Sort the teamMembers array based on the custom role order
   teamMembers.sort((a, b) => customRoleOrder[a.role] - customRoleOrder[b.role]);
+
   const pageTitle = "Team Analytika";
   const pageDescription =
     "This is team Analytika Page designed and developed by Naitik";
@@ -36,10 +38,8 @@ const TeamPage = ({ teamMembers }) => {
     <>
       <Head>
         <title>{pageTitle}</title>
-
         {/* Meta tags */}
         <meta name="description" content={pageDescription} />
-
         {/* Open Graph (OG) tags for social media sharing */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
@@ -66,7 +66,6 @@ const TeamPage = ({ teamMembers }) => {
           >
             All
           </div>
-
           {uniquePositions.map((position) => (
             <div
               key={position}
@@ -84,7 +83,6 @@ const TeamPage = ({ teamMembers }) => {
         <ul className="flex flex-wrap justify-center mt-6 md:mx-16">
           {teamMembers.map((member) => {
             const imageProps = useNextSanityImage(sanityClient, member.image);
-
             if (
               selectedPosition === "All" ||
               member.position === selectedPosition
@@ -94,7 +92,7 @@ const TeamPage = ({ teamMembers }) => {
                   {member.image && (
                     <Image
                       {...imageProps}
-                      className="w-64 h-auto mx-auto rounded-xl" 
+                      className="w-64 h-auto mx-auto rounded-xl"
                       alt={member.image.alt || ""}
                     />
                   )}
