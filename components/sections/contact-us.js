@@ -25,9 +25,10 @@ export default function Contact() {
         </div>
       </div>
       <div className="max-w-md mx-6 md:mx-2 mt-6 md:w-1/2 md:mt-0">
+        <input type="hidden" name="form-name" value="contact" />
         <form
           name="contact" // Specify the form name
-          method="POST"   // Specify the HTTP method as POST
+          method="POST" // Specify the HTTP method as POST
           data-netlify="true" // Enable Netlify Forms
         >
           <input
