@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Contact() {
   return (
     <section className="md:flex md:justify-center mt-16 pt-20" id="contact-us">
@@ -23,21 +25,25 @@ export default function Contact() {
         </div>
       </div>
       <div className="max-w-md mx-6 md:mx-2 mt-6 md:w-1/2 md:mt-0">
-        <form className="text-md flex flex-col" netlify name="contact">
+        <form
+          name="contact" // Specify the form name
+          method="POST"   // Specify the HTTP method as POST
+          data-netlify="true" // Enable Netlify Forms
+        >
           <input
             type="text"
-            name="name"
+            name="name" // Name attribute for the input field
             placeholder="Name: John Doe"
             className="border-gray-200 bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
           />
           <input
             type="email"
-            name="email"
+            name="email" // Name attribute for the input field
             placeholder="Email: xyz@example.com"
             className="border-gray-200 bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
           />
           <textarea
-            name="message"
+            name="message" // Name attribute for the textarea field
             placeholder="Type your heart out!"
             rows="4"
             className="border-gray-200 bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
