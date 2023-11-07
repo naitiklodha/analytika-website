@@ -46,7 +46,7 @@ const Navbar = () => {
     <nav className={`sticky top-0 z-20 bg-analytikaBlack`}>
       <div className="max-w-screen flex flex-wrap items-center text-analytikaWhite justify-between mx-auto p-4">
         <Link href="/">
-          <p className="flex items-center uppercase text-3xl md:ml-4 tracking-wider font-normal">
+          <p className="flex items-center uppercase text-2xl md:ml-4 tracking-wider font-normal">
             <Image
               src="/logo.svg"
               className="w-16 h-16 mr-3 mt-4"
