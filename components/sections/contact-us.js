@@ -1,39 +1,39 @@
 import { useRef } from "react";
 export default function Contact() {
-	const nameRef = useRef(null);
-	const emailRef = useRef(null);
-	const messageRef = useRef(null);
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const messageRef = useRef(null);
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-const url=process.env.NEXT_PUBLIC_APPSCRIPT_URL;
-		const data = {
-		  name: nameRef.current?.value,
-		  email: emailRef.current?.value,
-		  message: messageRef.current?.value,
-		};
-	
-		const requestOptions = {
-		  method: "POST",
-		  headers: { "Content-Type": "application/json" },
-		  body: JSON.stringify(data),
-		  mode: "no-cors",
-		};
-	
-		fetch(url, requestOptions)
-		  .then((response) => {
-			console.log(response);
-			alert("Message sent sucessfully!");
-			nameRef.current.value = "";
-			emailRef.current.value = "";
-			messageRef.current.value = "";
-		  })
-	
-		  .catch((error) => {
-			console.error("Error:", error);
-			// Handle any errors that occurred during the request
-		  });
-	  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const url = process.env.NEXT_PUBLIC_APPSCRIPT_URL;
+    const data = {
+      name: nameRef.current?.value,
+      email: emailRef.current?.value,
+      message: messageRef.current?.value,
+    };
+
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+      mode: "no-cors",
+    };
+
+    fetch(url, requestOptions)
+      .then((response) => {
+        console.log(response);
+        alert("Message sent sucessfully!");
+        nameRef.current.value = "";
+        emailRef.current.value = "";
+        messageRef.current.value = "";
+      })
+
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle any errors that occurred during the request
+      });
+  };
 
   return (
     <section className="md:flex md:justify-center mt-16 pt-20" id="contact-us">
@@ -62,20 +62,29 @@ const url=process.env.NEXT_PUBLIC_APPSCRIPT_URL;
         <form className="text-md flex flex-col" onSubmit={handleSubmit}>
           <input
             type="text"
-			ref={nameRef}
+            ref={nameRef}
+            id="name"
+            name="name"
+            autoComplete
             placeholder="Name: John Doe"
             className="border-analytikaWhite bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
           />
           <input
             type="email"
-			ref={emailRef}
+            ref={emailRef}
+            id="email"
+            name="email"
+            autoComplete
             placeholder="Email: xyz@example.com"
             className="border-analytikaWhite bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
           />
           <textarea
             placeholder="Type your heart out!"
-			ref={messageRef}
+            ref={messageRef}
             rows="4"
+            autoComplete
+            id="message"
+            name="message"
             className="border-analytikaWhite bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
           ></textarea>
           <button

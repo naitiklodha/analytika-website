@@ -55,6 +55,7 @@ export default function Home({ teamMembers, events, blogs }) {
               alt="illustration"
               width={800}
               height={600}
+              priority
             />
           </div>
         </section>
@@ -69,7 +70,7 @@ export default function Home({ teamMembers, events, blogs }) {
 }
 
 export async function getStaticProps() {
-  const query = groq`*[_type == "team" && (role == "President" || role == "Vice President")]{_id, name, position, department, role, "image": image.asset->}`;
+  const query = groq`*[_type == "team" && (role == "President" || role=="Joint President"||role=="Faculty Mentor" ||role == "Vice President")]{_id, name, position, department, role, "image": image.asset->}`;
   const teamMembers = await sanityClient.fetch(query);
 
   const eventsQuery = groq`*[_type == 'events'] {

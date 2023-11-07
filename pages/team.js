@@ -1,9 +1,9 @@
 import sanityClient from "@/data/client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
-import { groq } from "next-sanity";
 import TeamCard from "@/components/TeamCard";
+import { groq } from "next-sanity";
 
 const TeamPage = ({ teamMembers }) => {
   const [selectedPosition, setSelectedPosition] = useState("All");
@@ -24,16 +24,19 @@ const TeamPage = ({ teamMembers }) => {
     "Co-Founder": 9,
   };
 
-  teamMembers.sort((a, b) => {
+  const [filteredMembers, setFilteredMembers] = useState([...teamMembers]);
+
+  filteredMembers.sort((a, b) => {
     const roleOrderA = customRoleOrder[a.role];
     const roleOrderB = customRoleOrder[b.role];
 
     if (roleOrderA === roleOrderB) {
-      // If the roles are the same, prioritize "Technical" members.
-      if (a.department === "Technical" && b.department !== "Technical")
+      if (a.department === "Technical" && b.department !== "Technical") {
         return -1;
-      if (a.department !== "Technical" && b.department === "Technical")
+      }
+      if (a.department !== "Technical" && b.department === "Technical") {
         return 1;
+      }
       return 0;
     }
 
@@ -45,6 +48,19 @@ const TeamPage = ({ teamMembers }) => {
     "This is team Analytika Page designed and developed by Naitik";
   const ogImageUrl = "analytika-team.jpeg";
   const siteUrl = "https://analytika-web.netlify.app/";
+
+  const filterMembers = (position) => {
+    if (position === "All") {
+      setFilteredMembers([...teamMembers]);
+    } else {
+      const filtered = teamMembers.filter((member) => member.position === position);
+      setFilteredMembers(filtered);
+    }
+  };
+
+  useEffect(() => {
+    filterMembers(selectedPosition);
+  }, [selectedPosition, teamMembers]);
 
   return (
     <>
@@ -60,8 +76,8 @@ const TeamPage = ({ teamMembers }) => {
         <meta property="og:type" content="website" />
       </Head>
       <Navbar />
-      <div className="flex flex-col items-center justify-center uppercase ">
-        <h1 className="text-4xl font-extrabold  my-6">
+      <div className="flex flex-col items-center justify-center uppercase">
+        <h1 className="text-4xl font-extrabold my-6">
           Our{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
             Team
@@ -70,7 +86,7 @@ const TeamPage = ({ teamMembers }) => {
         <div className="flex flex-wrap gap-4 justify-center">
           <div
             onClick={() => setSelectedPosition("All")}
-            className={`px-4 py-2 text-xl md:text-2xl rounded-md  hover:text-analytikaGreen hover:cursor-pointer border-analytikaYellow hover:bg-analytikaGreentransition duration-300 ease-in-out ${
+            className={`px-4 py-2 text-xl md:text-2xl rounded-md hover:text-analytikaGreen hover:cursor-pointer border-analytikaYellow hover:bg-analytikaGreen transition duration-300 ease-in-out ${
               selectedPosition === "All"
                 ? "underline font-bold bg-clip-text text-transparent bg-gradient-to-tr from-analytikaGreen to-analytikaYellow"
                 : ""
@@ -93,15 +109,9 @@ const TeamPage = ({ teamMembers }) => {
           ))}
         </div>
         <ul className="flex flex-wrap justify-center mt-6 md:mx-16">
-          {teamMembers.map((member) => {
-            if (
-              selectedPosition === "All" ||
-              member.position === selectedPosition
-            ) {
-              return <TeamCard key={member._id} member={member} />;
-            }
-            return null;
-          })}
+          {filteredMembers.map((member) => (
+            <TeamCard key={member._id} member={member} />
+          ))}
         </ul>
       </div>
     </>
@@ -111,12 +121,18 @@ const TeamPage = ({ teamMembers }) => {
 export default TeamPage;
 
 export async function getStaticProps() {
-  // Fetch team members from Sanity
   const query = groq`*[_type == "team"]{_id, name, position, department, role, "image": image.asset->}`;
   const teamMembers = await sanityClient.fetch(query);
-  return {
-    props: {
-      teamMembers,
-    },
-  };
+
+  if (Array.isArray(teamMembers)) {
+    return {
+      props: {
+        teamMembers,
+      },
+    };
+  } else {
+    return {
+      notFound: true, 
+    };
+  }
 }

@@ -34,17 +34,16 @@ const BlogList = ({ blogs }) => {
                   <h2 className="text-2xl font-bold bg-gradient-to-r from-analytikaGreen to-analytikaYellow text-transparent bg-clip-text transition hover:scale-105">
                     {blog.title}
                   </h2>
-                  <p className="mt-2 text-gray-400">
+                  <div className="mt-2 text-gray-400">
                     <div className="line-clamp-2 overflow-hidden transition hover:line-clamp-3">
                       {blog.description}
                     </div>
-                  </p>
-                  <Link
-                    href={blog.mediumURL}
+                  </div>
+                  <p
                     className="text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow hover:underline"
                   >
                     Read More
-                  </Link>
+                  </p>
                 </div>
               </li>
             </Link>

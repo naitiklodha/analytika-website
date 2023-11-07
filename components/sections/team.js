@@ -2,43 +2,24 @@ import Link from "next/link";
 import TeamCard from "../TeamCard.js";
 
 const TeamPage = ({ teamMembers }) => {
-  const filteredTeamMembers = teamMembers.filter((member) =>
-    [
-      "Faculty Mentor",
-      "President",
-      "Joint President",
-      "Vice President",
-    ].includes(member.role)
-  );
+  const customRoleOrder = {
+    "Faculty Mentor": 0,
+    "President": 1,
+    "Joint President": 2,
+    "Vice President": 3,
+  };
 
-  filteredTeamMembers.sort((a, b) => {
-    const rolesOrder = [
-      "Faculty Mentor",
-      "President",
-      "Joint President",
-      "Vice President",
-    ];
-    const roleA = a.role;
-    const roleB = b.role;
-    const indexA = rolesOrder.indexOf(roleA);
-    const indexB = rolesOrder.indexOf(roleB);
+  teamMembers.sort((a, b) => {
+    const roleOrderA = customRoleOrder[a.role];
+    const roleOrderB = customRoleOrder[b.role];
 
-    if (indexA !== indexB) {
-      return indexA - indexB;
-    } else {
-      const departmentA = a.department || "";
-      const departmentB = b.department || "";
-
-      if (departmentA === departmentB) {
-        return 0;
-      } else if (departmentA === "Technical") {
-        return -1;
-      } else if (departmentB === "Technical") {
-        return 1;
-      } else {
-        return departmentA.localeCompare(departmentB);
-      }
+    if (roleOrderA === roleOrderB) {
+      if (a.department === "Technical" && b.department !== "Technical") return -1;
+      if (a.department !== "Technical" && b.department === "Technical") return 1;
+      return 0;
     }
+
+    return roleOrderA - roleOrderB;
   });
 
   return (
@@ -50,7 +31,7 @@ const TeamPage = ({ teamMembers }) => {
         Our Team
       </h1>
       <ul className="flex flex-wrap justify-center mt-6">
-        {filteredTeamMembers.map((member) => (
+        {teamMembers.map((member) => (
           <TeamCard member={member} key={member._id} />
         ))}
       </ul>
