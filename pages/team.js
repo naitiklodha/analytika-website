@@ -12,20 +12,33 @@ const TeamPage = ({ teamMembers }) => {
   );
 
   const customRoleOrder = {
-    "President": 0,
-    "Joint President": 1,
-    "Vice President": 2,
-    "Secretary": 3,
-    "Treasurer": 4,
-   "Head": 5,
-    "Sub Head": 6,
-    "Founder": 7,
-    "Co-Founder":8,
-    "Faculty Mentor": 9,
+    "Faculty Mentor": 0,
+    President: 1,
+    "Joint President": 2,
+    "Vice President": 3,
+    Secretary: 4,
+    Treasurer: 5,
+    Head: 6,
+    "Sub Head": 7,
+    Founder: 8,
+    "Co-Founder": 9,
   };
 
-  // Sort the teamMembers array based on the custom role order
-  teamMembers.sort((a, b) => customRoleOrder[a.role] - customRoleOrder[b.role]);
+  teamMembers.sort((a, b) => {
+    const roleOrderA = customRoleOrder[a.role];
+    const roleOrderB = customRoleOrder[b.role];
+
+    if (roleOrderA === roleOrderB) {
+      // If the roles are the same, prioritize "Technical" members.
+      if (a.department === "Technical" && b.department !== "Technical")
+        return -1;
+      if (a.department !== "Technical" && b.department === "Technical")
+        return 1;
+      return 0;
+    }
+
+    return roleOrderA - roleOrderB;
+  });
 
   const pageTitle = "Team Analytika";
   const pageDescription =
