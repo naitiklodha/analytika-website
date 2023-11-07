@@ -18,7 +18,7 @@ export default function About() {
               width={0}
               height={0}
               sizes="100vw"
-              className="transition ease-linear delay-100 md:hover:scale-105 md:w-[40vw] rounded-lg shadow-lg"
+              className="transition ease-linear delay-100 md:hover:scale-105 w-full md:w-[40vw] rounded-lg shadow-lg"
             />
           </figure>
 
