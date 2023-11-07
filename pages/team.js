@@ -18,10 +18,10 @@ const TeamPage = ({ teamMembers }) => {
     "Vice President": 3,
     Secretary: 4,
     Treasurer: 5,
-    Head: 6,
-    "Sub Head": 7,
-    Founder: 8,
-    "Co-Founder": 9,
+    Founder: 6,
+    "Co-Founder": 7,
+    Head: 8,
+    "Sub Head": 9,
   };
 
   const [filteredMembers, setFilteredMembers] = useState([...teamMembers]);
