@@ -3,7 +3,7 @@ import TeamCard from "../TeamCard.js";
 
 const TeamPage = ({ teamMembers }) => {
   const filteredTeamMembers = teamMembers.filter((member) =>
-    ["President", "Vice President"].includes(member.role)
+    ["President", "Vice President","Faculty Mentor"].includes(member.role)
   );
 
   filteredTeamMembers.sort((a, b) => {
