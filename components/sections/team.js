@@ -1,7 +1,5 @@
 import Link from "next/link";
-import sanityClient from "@/data/client";
-import { useNextSanityImage } from "next-sanity-image";
-import Image from "next/image";
+import TeamCard from "../TeamCard.js";
 
 const TeamPage = ({ teamMembers }) => {
   const filteredTeamMembers = teamMembers.filter((member) =>
@@ -27,33 +25,10 @@ const TeamPage = ({ teamMembers }) => {
         Our Team
       </h1>
       <ul className="flex flex-wrap justify-center mt-6">
-        {filteredTeamMembers.map((member) => {
-          const imageProps = useNextSanityImage(sanityClient, member.image);
-
-          return (
-            <li
-              key={member._id}
-              className="m-4 mx-8 rounded-xl transition-transform hover:scale-105"
-            >
-              {member.image && (
-                <Image
-                  {...imageProps}
-                  className="w-64 h-auto mx-auto rounded-lg"
-                  alt={member.image.alt || ""}
-                />
-              )}
-              <h2 className="text-xl text-center m-2 text-analytikaWhite mt-4">
-                {member.name}
-              </h2>
-              <p className="text-lg text-center m-2 text-analytikaGreen mt-2">
-                {member.role}
-              </p>
-              <p className="text-lg text-center m-2 text-analytikaYellow">
-                {member.department}
-              </p>
-            </li>
-          );
-        })}
+        {filteredTeamMembers.map((member) => 
+          
+          <TeamCard member={member} key={member._id} />
+        )}
       </ul>
       <Link href="/team">
         <h1 className="text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow mt-4 text-2xl cursor-pointer transition-transform hover:scale-105">

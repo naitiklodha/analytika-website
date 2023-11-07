@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { groq } from "next-sanity";
-import localFont from "next/font/local";
 import sanityClient from "@/data/client";
 import Navbar from "@/components/Navbar";
 import About from "@/components/sections/about-us";
@@ -10,7 +9,6 @@ import ContactUs from "@/components/sections/contact-us";
 import BlogList from "@/components/sections/blogs";
 import Head from "next/head";
 
-const myFont = localFont({ src: "./coolvetica rg.ttf" });
 
 export default function Home({ teamMembers, events, blogs }) {
   const pageTitle = "Analytika - The Data Science Club";
@@ -36,7 +34,7 @@ export default function Home({ teamMembers, events, blogs }) {
       </Head>
       <Navbar />
       <main
-        className={`min-h-screen bg-analytikaBlack text-analytikaWhite p-7 ${myFont.className} md:max-w-[150ch] mx-auto scrollbar-thumb-red-500`}
+        className={`min-h-screen bg-analytikaBlack text-analytikaWhite p-7  md:max-w-[150ch] mx-auto scrollbar-thumb-red-500`}
       >
         <section className="flex flex-col-reverse mt-8 md:flex-row justify-between space-x-4 md:space-x-0">
           <div className="md:w-1/2 text-center md:text-left">

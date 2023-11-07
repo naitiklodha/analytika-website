@@ -1,28 +1,26 @@
-import Link from "next/link";
 import sanityClient from "@/data/client";
 import { useState } from "react";
-import { useNextSanityImage } from "next-sanity-image";
-import Image from "next/image";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import { groq } from "next-sanity";
+import TeamCard from "@/components/TeamCard";
 
 const TeamPage = ({ teamMembers }) => {
-  const [selectedPosition, setSelectedPosition] = useState("Super Core");
+  const [selectedPosition, setSelectedPosition] = useState("All");
   const uniquePositions = Array.from(
     new Set(teamMembers.map((member) => member.position))
   );
 
   const customRoleOrder = {
-    "President": 0,
-    "Joint President":1,
+    President: 0,
+    "Joint President": 1,
     "Vice President": 2,
-    "Secretary": 3,
-    "Treasurer": 4,
-    "Head": 5,
+    Secretary: 3,
+    Treasurer: 4,
+    Head: 5,
     "Sub Head": 6,
-    "Co-Founder":7,
-    "Faculty Mentor":8,
+    "Co-Founder": 7,
+    "Faculty Mentor": 8,
   };
 
   // Sort the teamMembers array based on the custom role order
@@ -58,7 +56,7 @@ const TeamPage = ({ teamMembers }) => {
         <div className="flex flex-wrap gap-4 justify-center">
           <div
             onClick={() => setSelectedPosition("All")}
-            className={`px-4 py-2 text-xl rounded-md hover:cursor-pointer border-analytikaYellow hover:bg-analytikaGreentransition duration-300 ease-in-out ${
+            className={`px-4 py-2 text-xl md:text-2xl rounded-md  hover:text-analytikaGreen hover:cursor-pointer border-analytikaYellow hover:bg-analytikaGreentransition duration-300 ease-in-out ${
               selectedPosition === "All"
                 ? "underline font-bold bg-clip-text text-transparent bg-gradient-to-tr from-analytikaGreen to-analytikaYellow"
                 : ""
@@ -70,7 +68,7 @@ const TeamPage = ({ teamMembers }) => {
             <div
               key={position}
               onClick={() => setSelectedPosition(position)}
-              className={`px-4 py-2 text-xl rounded-md hover:cursor-pointer transition duration-300 ease-in-out ${
+              className={`px-4 py-2 text-xl md:text-2xl hover:text-analytikaGreen rounded-md hover:cursor-pointer transition duration-300 ease-in-out ${
                 selectedPosition === position
                   ? "underline font-bold bg-clip-text text-transparent bg-gradient-to-tr from-analytikaGreen to-analytikaYellow"
                   : ""
@@ -82,31 +80,11 @@ const TeamPage = ({ teamMembers }) => {
         </div>
         <ul className="flex flex-wrap justify-center mt-6 md:mx-16">
           {teamMembers.map((member) => {
-            const imageProps = useNextSanityImage(sanityClient, member.image);
             if (
               selectedPosition === "All" ||
               member.position === selectedPosition
             ) {
-              return (
-                <li key={member._id} className="m-4 mx-12 rounded-lg">
-                  {member.image && (
-                    <Image
-                      {...imageProps}
-                      className="w-64 h-auto mx-auto rounded-xl"
-                      alt={member.image.alt || ""}
-                    />
-                  )}
-                  <h2 className="text-xl text-center m-2  text-analytikaWhite mt-4">
-                    {member.name}
-                  </h2>
-                  <p className="text-lg text-center m-2 text-analytikaGreen mt-2">
-                    {member.role}
-                  </p>
-                  <p className="text-lg text-center m-2 text-analytikaYellow">
-                    {member.department}
-                  </p>
-                </li>
-              );
+              return <TeamCard key={member._id} member={member} />;
             }
             return null;
           })}

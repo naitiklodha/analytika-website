@@ -42,7 +42,7 @@ const url=process.env.NEXT_PUBLIC_APPSCRIPT_URL;
         <h1 className="font-semibold text-4xl md:text-6xl mt-4 text-center md:text-left text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
           CONTACT US
         </h1>
-        <div className="flex items-center md:items-start p-4 border-2 border-gray-200 rounded-md mt-6 transform hover:scale-105 transition-transform">
+        <div className="flex items-center md:items-start p-4 border-2 border-analytikaWhite rounded-md mt-6 transform hover:scale-105 transition-transform">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="48"
@@ -64,23 +64,23 @@ const url=process.env.NEXT_PUBLIC_APPSCRIPT_URL;
             type="text"
 			ref={nameRef}
             placeholder="Name: John Doe"
-            className="border-gray-200 bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
+            className="border-analytikaWhite bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
           />
           <input
             type="email"
 			ref={emailRef}
             placeholder="Email: xyz@example.com"
-            className="border-gray-200 bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
+            className="border-analytikaWhite bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
           />
           <textarea
             placeholder="Type your heart out!"
 			ref={messageRef}
             rows="4"
-            className="border-gray-200 bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
+            className="border-analytikaWhite bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
           ></textarea>
           <button
             type="submit"
-            className="p-4 bg-gradient-to-b from-analytikaGreen to bg-analytikaYellow rounded-lg text-white hover:shadow-md transition duration-300"
+            className="p-4 bg-gradient-to-b from-analytikaGreen to bg-analytikaYellow rounded-lg text-analytikaWhite hover:shadow-md transition duration-300"
           >
             Submit
           </button>

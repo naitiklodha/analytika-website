@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import localFont from "next/font/local";
 import Image from "next/image";
 
-const myFont = localFont({ src: "./coolvetica condensed rg.ttf" });
+
 
 const Navbar = () => {
   const router = useRouter();
@@ -44,7 +43,7 @@ const Navbar = () => {
   }, [currentPathname]);
 
   return (
-    <nav className={`${myFont.className} sticky top-0 z-20 bg-analytikaBlack`}>
+    <nav className={`sticky top-0 z-20 bg-analytikaBlack`}>
       <div className="max-w-screen flex flex-wrap items-center text-analytikaWhite justify-between mx-auto p-4">
         <Link href="/">
           <p className="flex items-center uppercase text-3xl md:ml-4 tracking-wider font-normal">
@@ -93,10 +92,10 @@ const Navbar = () => {
           } duration-200`}
           id="navbar-default"
         >
-          <ul className="text-lg text-white md:text-2xl flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
+          <ul className="text-lg text-analytikaWhite md:text-xl flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
             {Object.entries(routeLabels).map(([path, label]) => (
               <Link href={path} key={path}>
-                <li key={path} className="text-white">
+                <li key={path} className="text-analytikaWhite">
                   <p
                     className={
                       currentPathname === path
