@@ -18,11 +18,11 @@ export default function About() {
               width={0}
               height={0}
               sizes="100vw"
-              className="transition ease-linear delay-100 md:hover:scale-105 w-full rounded-lg shadow-lg"
+              className="transition ease-linear delay-100 md:hover:scale-105 md:w-[40vw] rounded-lg shadow-lg"
             />
           </figure>
 
-          <section className="mt-4 self-center md:self-baseline max-w-full md:max-w-[65ch] text-lg  font-light  [&>*]:mx-4  [&>*]:mt-4  [&>*]:text-md  [&>*]:leading-relaxed ">
+          <section className="mt-4 md:mt-6 self-center md:self-baseline max-w-full md:max-w-[55ch] text-lg   font-light  [&>*]:mx-4  [&>*]:mt-4  [&>*]:text-md  [&>*]:leading-relaxed ">
             <p>
               Analytika, founded by Om Agrawal, Shreya Govil, and Vanshaj
               Ajmera, is a thriving data science club at NMIMS (Narsee Monjee

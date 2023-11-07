@@ -7,9 +7,7 @@ import { groq } from "next-sanity";
 
 const TeamPage = ({ teamMembers }) => {
   const [selectedPosition, setSelectedPosition] = useState("All");
-  const uniquePositions = Array.from(
-    new Set(teamMembers.map((member) => member.position))
-  );
+  const uniquePositions = ["Faculty Mentor","Founder","Super Core","Core"]
 
   const customRoleOrder = {
     "Faculty Mentor": 0,
@@ -86,9 +84,9 @@ const TeamPage = ({ teamMembers }) => {
         <div className="flex flex-wrap gap-4 justify-center">
           <div
             onClick={() => setSelectedPosition("All")}
-            className={`px-4 py-2 text-xl md:text-2xl rounded-md hover:text-analytikaGreen hover:cursor-pointer border-analytikaYellow hover:bg-analytikaGreen transition duration-300 ease-in-out ${
+            className={`px-4 py-2 text-xl md:text-2xl hover:scale-105 rounded-md hover:text-analytikaGreen hover:cursor-pointer border-analytikaYellow transition duration-300 ease-in-out ${
               selectedPosition === "All"
-                ? "underline font-bold bg-clip-text text-transparent bg-gradient-to-tr from-analytikaGreen to-analytikaYellow"
+                ? "font-bold bg-clip-text text-transparent bg-gradient-to-tr from-analytikaGreen to-analytikaYellow"
                 : ""
             }`}
           >
@@ -98,9 +96,9 @@ const TeamPage = ({ teamMembers }) => {
             <div
               key={position}
               onClick={() => setSelectedPosition(position)}
-              className={`px-4 py-2 text-xl md:text-2xl hover:text-analytikaGreen rounded-md hover:cursor-pointer transition duration-300 ease-in-out ${
+              className={`px-4 py-2 text-xl md:text-2xl hover:scale-105  hover:text-analytikaGreen rounded-md hover:cursor-pointer transition duration-300 ease-in-out ${
                 selectedPosition === position
-                  ? "underline font-bold bg-clip-text text-transparent bg-gradient-to-tr from-analytikaGreen to-analytikaYellow"
+                  ? "font-bold bg-clip-text text-transparent bg-gradient-to-tr from-analytikaGreen to-analytikaYellow"
                   : ""
               }`}
             >

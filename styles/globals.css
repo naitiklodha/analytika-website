@@ -18,10 +18,7 @@ body {
   background:linear-gradient(45deg,#319E47,#F5EC4D);
   border-radius: 15px;
 }
-@font-face {
-  font-family: Coolvetica;
-  src: url("coolvetica rg.ttf");
-}
+
 *{
-  font-family: Coolvetica;
+  font-family: Helvetica, sans-serif;
 }

@@ -7,7 +7,7 @@ const TeamCard=( {member} )=> {
   return (
     <li
       key={member._id}
-      className="m-4 mx-8 rounded-xl transition-transform hover:scale-105"
+      className="m-4 mx-12 rounded-xl transition-transform hover:scale-105"
     >
       {member.image && (
         <Image

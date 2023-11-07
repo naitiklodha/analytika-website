@@ -65,7 +65,7 @@ export default function Contact() {
             ref={nameRef}
             id="name"
             name="name"
-            autoComplete
+            autoComplete="true"
             placeholder="Name: John Doe"
             className="border-analytikaWhite bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
           />
@@ -74,7 +74,7 @@ export default function Contact() {
             ref={emailRef}
             id="email"
             name="email"
-            autoComplete
+            autoComplete="true"
             placeholder="Email: xyz@example.com"
             className="border-analytikaWhite bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
           />
@@ -82,7 +82,7 @@ export default function Contact() {
             placeholder="Type your heart out!"
             ref={messageRef}
             rows="4"
-            autoComplete
+            autoComplete="true"
             id="message"
             name="message"
             className="border-analytikaWhite bg-transparent border-2 rounded-md p-3 mb-4 transition duration-300"
