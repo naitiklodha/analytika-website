@@ -47,7 +47,7 @@ export default function EventPage({ event }) {
               key={image} 
               src={image}
               alt={`Event Image ${index}`}
-              className="w-full h-80 rounded-lg shadow-md"
+              className="w-full h-80 rounded-lg shadow-md object-cover"
             />
           ))}
         </Carousel>
