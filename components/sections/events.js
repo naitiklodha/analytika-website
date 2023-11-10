@@ -21,7 +21,7 @@ function EventCard({ event }) {
       <div className="relative overflow-hidden w-full cursor-pointer">
         <Image
           {...imageProps}
-          className="w-full mx-auto h-80 transition-transform transform scale-100 hover:scale-105"
+          className="w-full mx-auto h-80 transition-transform transform scale-100 hover:scale-105 object-cover"
           alt={event.image.alt || ""}
         />
         <div className="absolute inset-0 grid place-items-center bg-black/75">
