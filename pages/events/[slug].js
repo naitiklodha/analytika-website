@@ -32,12 +32,12 @@ export default function EventPage({ event }) {
 
 
       <div className="py-4 flex flex-col items-center justify-center md:mx-8">
-        <h1 className="text-4xl font-extrabold uppercase mb-4 text-transparent bg-clip-text bg-gradient-to-r from-analytikaGreen to-analytikaYellow">
+        <h1 className="text-5xl font-extrabold uppercase mb-4 text-transparent bg-clip-text bg-gradient-to-r from-analytikaGreen to-analytikaYellow">
           {event.name}
         </h1>
 
         <Carousel
-          className="rounded-lg mb-6 w-4/5"
+          className="rounded-lg mb-6 "
           transition={{ duration: 2 }}
           loop
           autoplay
@@ -52,22 +52,22 @@ export default function EventPage({ event }) {
           ))}
         </Carousel>
 
-        <div className="text-white flex justify-evenly rounded-md p-6 mx-8 bg-gradient-to-tr from-analytikaGreen to-analytikaYellow text-xl md:mx-16">
-          <div className="mx-2 md:mx-16 flex-col items-center justify-center">
+        <div className="text-gray-300 flex justify-center rounded-md py-6 mx-8 bg-gradient-to-br from-analytikaYellow to-analytikaGreen text-xl md:mx-16">
+          <div className="mx-8 md:mx-16 flex-col items-center justify-center">
             <FaCalendar className="mb-4" size={48} />
             <div>{event.date}</div>
           </div>
-          <div className="mx-2 md:mx-16 flex-col items-center justify-center">
+          <div className="mx-8 md:mx-16 flex-col items-center justify-center">
             <FaClock className="mb-4" size={48} />
             <div>{event.time}</div>
           </div>
-          <div className="mx-2 md:mx-16 flex-col max-w-[15ch] items-center justify-center">
+          <div className="mx-8 md:mx-16 flex-col max-w-[15ch] items-center justify-center">
             <FaMapMarkerAlt className="mb-4" size={48} />
             <div>{event.venue}</div>
           </div>
         </div>
 
-        <p className="text-white text-xl my-8 mx-8 md:mx-16">{event.description}</p>
+        <p className="text-gray-300 text-xl font-thin my-8 mx-8 md:mx-16 max-w-[85ch]">{event.description}</p>
       </div>
     </>
   );

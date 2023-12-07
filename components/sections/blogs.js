@@ -3,6 +3,13 @@ import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
 import sanityClient from "@/data/client";
 
+const truncateText = (text, maxLength) => {
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + "...";
+  }
+  return text;
+};
+
 const BlogList = ({ blogs }) => {
   return (
     <div className="mb-8 pt-20" id="blogs">
@@ -12,6 +19,7 @@ const BlogList = ({ blogs }) => {
       <ul className="grid grid-cols-1 md:mx-8">
         {blogs?.map((blog) => {
           const imageProps = useNextSanityImage(sanityClient, blog.thumbnail);
+          const truncatedTitle = truncateText(blog.title, 20); // Adjust the character limit as needed
 
           return (
             <Link href={blog.mediumURL} key={blog._id}>
@@ -25,14 +33,14 @@ const BlogList = ({ blogs }) => {
                       {...imageProps}
                       width={200}
                       height={0}
-                      className="w-32 h-full"
+                      className="w-32 h-32"
                       alt={blog.thumbnail.alt || ""}
                     />
                   </div>
                 )}
                 <div className="p-4">
                   <h2 className="text-2xl font-bold bg-gradient-to-r from-analytikaGreen to-analytikaYellow text-transparent bg-clip-text transition hover:scale-105">
-                    {blog.title}
+                    {truncatedTitle}
                   </h2>
                   <div className="mt-2 text-gray-400">
                     <div className="line-clamp-2 overflow-hidden transition hover:line-clamp-3">
