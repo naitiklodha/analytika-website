@@ -6,7 +6,7 @@ import TeamCard from "@/components/TeamCard";
 import { groq } from "next-sanity";
 
 const TeamPage = ({ teamMembers }) => {
-  const [selectedPosition, setSelectedPosition] = useState("All");
+  const [selectedPosition, setSelectedPosition] = useState("Super Core");
   const uniquePositions = ["Faculty Mentor","Founder","Super Core","Core"]
 
   const customRoleOrder = {
@@ -27,7 +27,7 @@ const TeamPage = ({ teamMembers }) => {
   filteredMembers.sort((a, b) => {
     const roleOrderA = customRoleOrder[a.role];
     const roleOrderB = customRoleOrder[b.role];
-
+  
     if (roleOrderA === roleOrderB) {
       if (a.department === "Technical" && b.department !== "Technical") {
         return -1;
@@ -35,11 +35,18 @@ const TeamPage = ({ teamMembers }) => {
       if (a.department !== "Technical" && b.department === "Technical") {
         return 1;
       }
+      if (a.department < b.department) {
+        return -1;
+      }
+      if (a.department > b.department) {
+        return 1;
+      }
       return 0;
     }
-
+  
     return roleOrderA - roleOrderB;
   });
+  
 
   const pageTitle = "Team Analytika";
   const pageDescription =

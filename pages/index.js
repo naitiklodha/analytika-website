@@ -38,8 +38,8 @@ export default function Home({ teamMembers, events, blogs }) {
       >
         <section className="flex flex-col-reverse mt-8 md:flex-row justify-between space-x-4 md:space-x-0">
           <div className="md:w-1/2 text-center md:text-left">
-            <h1 className="text-5xl md:text-7xl font-extrabold mt-12 md:mt-20 tracking-wide mb-6 md:mb-0">
-              The only
+            <h1 className="text-5xl text-start md:text-7xl font-extrabold mt-12 md:mt-20 tracking-wide mb-6 md:mb-0">
+              The one and only
               <br />
               <span className="font-black text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
                 Data Science

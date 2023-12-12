@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { useRef } from "react";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 export default function Contact() {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
@@ -56,6 +58,11 @@ export default function Contact() {
             />
           </svg>
           <h3 className="ml-4 text-lg">dscnmims@gmail.com</h3>
+        </div>
+        <div className="mt-4 flex gap-8 justify-center md:justify-start">
+       <Link href={"https://instagram.com/analytika.nmims"}><FaInstagram size={48} className="hover:text-analytikaGreen"/></Link> 
+              <Link href={"https://www.linkedin.com/company/analytika-nmims/"}><FaLinkedin size={48} className="hover:text-analytikaGreen"/></Link> 
+
         </div>
       </div>
       <div className="max-w-md mx-6 md:mx-2 mt-6 md:w-1/2 md:mt-0">
