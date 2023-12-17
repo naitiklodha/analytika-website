@@ -19,7 +19,7 @@ const TeamPage = ({ teamMembers }) => {
     Founder: 6,
     "Co-Founder": 7,
     Head: 8,
-    "Sub Head": 9,
+
   };
 
   const [filteredMembers, setFilteredMembers] = useState([...teamMembers]);
