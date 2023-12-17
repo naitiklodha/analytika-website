@@ -32,16 +32,20 @@ const TeamPage = ({ teamMembers }) => {
       if (a.department === "Technical" && b.department !== "Technical") {
         return -1;
       }
-      if (a.department !== "Technical" && b.department === "Technical") {
+      if (a.department != "Technical" && b.department === "Technical") {
         return 1;
       }
-      if (a.department < b.department) {
-        return -1;
+  
+      if (a.department === b.department) {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
       }
-      if (a.department > b.department) {
-        return 1;
-      }
-      return 0;
+      return a.department.localeCompare(b.department);
     }
   
     return roleOrderA - roleOrderB;
@@ -52,7 +56,7 @@ const TeamPage = ({ teamMembers }) => {
   const pageDescription =
     "This is team Analytika Page designed and developed by Naitik";
   const ogImageUrl = "analytika-team.jpeg";
-  const siteUrl = "https://analytika-web.netlify.app/";
+  const siteUrl = "https://analytikanmims.com";
 
   const filterMembers = (position) => {
     if (position === "All") {
