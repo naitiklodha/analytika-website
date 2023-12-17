@@ -24,32 +24,37 @@ const TeamPage = ({ teamMembers }) => {
 
   const [filteredMembers, setFilteredMembers] = useState([...teamMembers]);
 
-  filteredMembers.sort((a, b) => {
-    const roleOrderA = customRoleOrder[a.role];
-    const roleOrderB = customRoleOrder[b.role];
-  
-    if (roleOrderA === roleOrderB) {
-      if (a.department === "Technical" && b.department !== "Technical") {
+filteredMembers.sort((a, b) => {
+  const roleOrderA = customRoleOrder[a.role];
+  const roleOrderB = customRoleOrder[b.role];
+
+  const isTechnical = (member) => member.department === "Technical";
+  const isHead = (member) => member.position === "Head";
+
+  if (roleOrderA === roleOrderB) {
+    if (isTechnical(a) && isTechnical(b)) {
+      if (isHead(a) && !isHead(b)) {
         return -1;
-      }
-      if (a.department != "Technical" && b.department === "Technical") {
+      } else if (!isHead(a) && isHead(b)) {
         return 1;
+      } else {
+        return a.name.localeCompare(b.name);
       }
-  
+    } else if (isTechnical(a) && !isTechnical(b)) {
+      return -1;
+    } else if (!isTechnical(a) && isTechnical(b)) {
+      return 1;
+    } else {
       if (a.department === b.department) {
-        if (a.name < b.name) {
-          return -1;
-        }
-        if (a.name > b.name) {
-          return 1;
-        }
-        return 0;
+        return a.name.localeCompare(b.name);
       }
       return a.department.localeCompare(b.department);
     }
-  
-    return roleOrderA - roleOrderB;
-  });
+  }
+
+  return roleOrderA - roleOrderB;
+});
+
   
 
   const pageTitle = "Team Analytika";
