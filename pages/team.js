@@ -19,7 +19,7 @@ const TeamPage = ({ teamMembers }) => {
     Founder: 6,
     "Co-Founder": 7,
     Head: 8,
-    "Sub Head": 9,
+    "Sub Head": 8,
   };
 
   const [filteredMembers, setFilteredMembers] = useState([...teamMembers]);
@@ -27,32 +27,52 @@ const TeamPage = ({ teamMembers }) => {
   filteredMembers.sort((a, b) => {
     const roleOrderA = customRoleOrder[a.role];
     const roleOrderB = customRoleOrder[b.role];
-  
+
     if (roleOrderA === roleOrderB) {
-      if (a.department === "Technical" && b.department !== "Technical") {
-        return -1;
+
+      if (a.department === 'Technical' && b.department !== 'Technical') {
+        return -1; 
       }
-      if (a.department !== "Technical" && b.department === "Technical") {
+      if (a.department !== 'Technical' && b.department === 'Technical') {
         return 1;
       }
+
+  
       if (a.department < b.department) {
         return -1;
       }
       if (a.department > b.department) {
         return 1;
       }
+      if (a.role === 'Head' && b.role === 'Sub Head') {
+        return -1; 
+      }
+      if (a.role === 'Sub Head' && b.role === 'Head') {
+        return 1; 
+      }
+        if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
       return 0;
     }
   
+    // If role order is different, sort by role order
     return roleOrderA - roleOrderB;
   });
+  
+  
+  
+  
   
 
   const pageTitle = "Team Analytika";
   const pageDescription =
     "This is team Analytika Page designed and developed by Naitik";
   const ogImageUrl = "analytika-team.jpeg";
-  const siteUrl = "https://analytika-web.netlify.app/";
+  const siteUrl = "https://analytikanmims.com";
 
   const filterMembers = (position) => {
     if (position === "All") {

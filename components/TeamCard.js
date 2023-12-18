@@ -12,7 +12,7 @@ const TeamCard=( {member} )=> {
       {member.image && (
         <Image
           {...imageProps}
-          className="w-64 aspect-square  mx-auto rounded-lg"
+          className="w-64 h-[17rem]  mx-auto rounded-lg"
           alt={member.image.alt || ""}
         />
       )}
