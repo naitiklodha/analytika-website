@@ -7,7 +7,7 @@ import { groq } from "next-sanity";
 
 const TeamPage = ({ teamMembers }) => {
   const [selectedPosition, setSelectedPosition] = useState("Super Core");
-  const uniquePositions = ["Faculty Mentor","Founder","Super Core","Core"]
+  const uniquePositions = ["Faculty Mentor", "Founder", "Super Core", "Core"];
 
   const customRoleOrder = {
     "Faculty Mentor": 0,
@@ -19,43 +19,47 @@ const TeamPage = ({ teamMembers }) => {
     Founder: 6,
     "Co-Founder": 7,
     Head: 8,
-
+    "Sub Head": 8,
   };
 
   const [filteredMembers, setFilteredMembers] = useState([...teamMembers]);
 
-filteredMembers.sort((a, b) => {
-  const roleOrderA = customRoleOrder[a.role];
-  const roleOrderB = customRoleOrder[b.role];
+  filteredMembers.sort((a, b) => {
+    const roleOrderA = customRoleOrder[a.role];
+    const roleOrderB = customRoleOrder[b.role];
 
-  const isTechnical = (member) => member.department === "Technical";
-  const isHead = (member) => member.position === "Head";
-
-  if (roleOrderA === roleOrderB) {
-    if (isTechnical(a) && isTechnical(b)) {
-      if (isHead(a) && !isHead(b)) {
+    if (roleOrderA === roleOrderB) {
+      if (a.department === "Technical" && b.department !== "Technical") {
         return -1;
-      } else if (!isHead(a) && isHead(b)) {
+      }
+      if (a.department !== "Technical" && b.department === "Technical") {
         return 1;
-      } else {
-        return a.name.localeCompare(b.name);
       }
-    } else if (isTechnical(a) && !isTechnical(b)) {
-      return -1;
-    } else if (!isTechnical(a) && isTechnical(b)) {
-      return 1;
-    } else {
-      if (a.department === b.department) {
-        return a.name.localeCompare(b.name);
+
+      if (a.department < b.department) {
+        return -1;
       }
-      return a.department.localeCompare(b.department);
+      if (a.department > b.department) {
+        return 1;
+      }
+      if (a.role === "Head" && b.role === "Sub Head") {
+        return -1;
+      }
+      if (a.role === "Sub Head" && b.role === "Head") {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
     }
-  }
 
-  return roleOrderA - roleOrderB;
-});
-
-  
+    // If role order is different, sort by role order
+    return roleOrderA - roleOrderB;
+  });
 
   const pageTitle = "Team Analytika";
   const pageDescription =
@@ -67,7 +71,9 @@ filteredMembers.sort((a, b) => {
     if (position === "All") {
       setFilteredMembers([...teamMembers]);
     } else {
-      const filtered = teamMembers.filter((member) => member.position === position);
+      const filtered = teamMembers.filter(
+        (member) => member.position === position
+      );
       setFilteredMembers(filtered);
     }
   };
@@ -146,7 +152,7 @@ export async function getStaticProps() {
     };
   } else {
     return {
-      notFound: true, 
+      notFound: true,
     };
   }
 }
