@@ -7,7 +7,7 @@ import { groq } from "next-sanity";
 
 const TeamPage = ({ teamMembers }) => {
   const [selectedPosition, setSelectedPosition] = useState("Super Core");
-  const uniquePositions = ["Faculty Mentor","Founder","Super Core","Core"]
+  const uniquePositions = ["Faculty Mentor", "Founder", "Super Core", "Core"];
 
   const customRoleOrder = {
     "Faculty Mentor": 0,
@@ -29,28 +29,26 @@ const TeamPage = ({ teamMembers }) => {
     const roleOrderB = customRoleOrder[b.role];
 
     if (roleOrderA === roleOrderB) {
-
-      if (a.department === 'Technical' && b.department !== 'Technical') {
-        return -1; 
+      if (a.department === "Technical" && b.department !== "Technical") {
+        return -1;
       }
-      if (a.department !== 'Technical' && b.department === 'Technical') {
+      if (a.department !== "Technical" && b.department === "Technical") {
         return 1;
       }
 
-  
       if (a.department < b.department) {
         return -1;
       }
       if (a.department > b.department) {
         return 1;
       }
-      if (a.role === 'Head' && b.role === 'Sub Head') {
-        return -1; 
+      if (a.role === "Head" && b.role === "Sub Head") {
+        return -1;
       }
-      if (a.role === 'Sub Head' && b.role === 'Head') {
-        return 1; 
+      if (a.role === "Sub Head" && b.role === "Head") {
+        return 1;
       }
-        if (a.name < b.name) {
+      if (a.name < b.name) {
         return -1;
       }
       if (a.name > b.name) {
@@ -58,15 +56,9 @@ const TeamPage = ({ teamMembers }) => {
       }
       return 0;
     }
-  
-    // If role order is different, sort by role order
+
     return roleOrderA - roleOrderB;
   });
-  
-  
-  
-  
-  
 
   const pageTitle = "Team Analytika";
   const pageDescription =
@@ -78,7 +70,9 @@ const TeamPage = ({ teamMembers }) => {
     if (position === "All") {
       setFilteredMembers([...teamMembers]);
     } else {
-      const filtered = teamMembers.filter((member) => member.position === position);
+      const filtered = teamMembers.filter(
+        (member) => member.position === position
+      );
       setFilteredMembers(filtered);
     }
   };
@@ -133,7 +127,7 @@ const TeamPage = ({ teamMembers }) => {
             </div>
           ))}
         </div>
-        <ul className="flex flex-wrap justify-center mt-6 md:mx-16">
+        <ul className="flex flex-wrap  max-w-[80vw] justify-center mt-6 md:mx-16">
           {filteredMembers.map((member) => (
             <TeamCard key={member._id} member={member} />
           ))}
@@ -157,7 +151,7 @@ export async function getStaticProps() {
     };
   } else {
     return {
-      notFound: true, 
+      notFound: true,
     };
   }
 }

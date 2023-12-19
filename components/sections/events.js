@@ -7,14 +7,16 @@ import React, { useState } from "react";
 
 function EventCard({ event }) {
   const imageProps = useNextSanityImage(sanityClient, event.image);
-  const maxDescriptionLength = 25;
 
-  const truncatedDescription =
-    event.description.length > maxDescriptionLength
-      ? event.description.slice(0, maxDescriptionLength) + "..."
-      : event.description;
+  const truncateDescription = (description, limit) => {
+    const words = description.split(" ");
+    if (words.length > limit) {
+      return words.slice(0, limit).join(" ") + "...";
+    }
+    return description;
+  };
 
-  const [isReadMore, setIsReadMore] = useState(false);
+  const truncatedDescription = truncateDescription(event.description, 15);
 
   return (
     <Link href={`/events/${event?.name}`}>
@@ -32,17 +34,10 @@ function EventCard({ event }) {
             >
               {event.name}
             </Typography>
-            <Typography variant="lead" color="white" className="mb-4">
-              {isReadMore ? event.description : truncatedDescription}
-            </Typography>
-            {event.description.length > maxDescriptionLength && (
-              <Button
-                size="lg"
-                className="bg-gradient-to-tr from-analytikaYellow to-analytikaGreen"
-              >
-                Explore
-              </Button>
-            )}
+
+            <Button className="bg-gradient-to-tr  from-analytikaYellow to-analytikaGreen mt-6 p-4">
+              Explore
+            </Button>
           </div>
         </div>
       </div>
