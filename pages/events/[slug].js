@@ -9,12 +9,12 @@ export default function EventPage({ event }) {
     return <div>No event data found.</div>;
   }
   const pageTitle = event.name;
-  const pageDescription =event.description;
+  const pageDescription = event.description;
   const ogImageUrl = "analytika-team.jpeg";
   const siteUrl = "https://analytika-web.netlify.app/";
   return (
     <>
-          <Head>
+      <Head>
         {/* Title */}
         <title>{pageTitle}</title>
 
@@ -30,7 +30,6 @@ export default function EventPage({ event }) {
       </Head>
       <Navbar />
 
-
       <div className="py-4 flex flex-col items-center justify-center md:mx-8">
         <h1 className="text-5xl font-extrabold uppercase mb-4 text-transparent bg-clip-text bg-gradient-to-r from-analytikaGreen to-analytikaYellow">
           {event.name}
@@ -44,7 +43,7 @@ export default function EventPage({ event }) {
         >
           {event.gallery.map((image, index) => (
             <img
-              key={image} 
+              key={image}
               src={image}
               alt={`Event Image ${index}`}
               className="w-full h-80 rounded-lg shadow-md object-cover"
@@ -52,22 +51,34 @@ export default function EventPage({ event }) {
           ))}
         </Carousel>
 
-        <div className="text-gray-300 flex justify-center rounded-md py-6 mx-8 bg-gradient-to-br from-analytikaYellow to-analytikaGreen text-xl md:mx-16">
-          <div className="mx-8 md:mx-16 flex-col items-center justify-center">
+        <div className="text-gray-300 flex text-center  flex-col md:flex-row justify-between rounded-md p-6 px-12 md:px-6 mx-8 bg-analytikaGreen text-xl md:mx-16">
+          <div className="mx-auto md:mx-16 flex flex-col p-4  items-center justify-center">
             <FaCalendar className="mb-4" size={48} />
-            <div>{event.date}</div>
+            <div>
+              {new Date(event.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+              <br />
+              {new Date(event.date).toLocaleDateString("en-US", {
+                weekday: "long",
+              })}
+            </div>
           </div>
-          <div className="mx-8 md:mx-16 flex-col items-center justify-center">
+          <div className="mx-auto md:mx-16 flex flex-col p-4 items-center justify-center">
             <FaClock className="mb-4" size={48} />
             <div>{event.time}</div>
           </div>
-          <div className="mx-8 md:mx-16 flex-col max-w-[15ch] items-center justify-center">
+          <div className="mx-auto md:mx-16 flex text-center flex-col  p-4 items-center justify-center">
             <FaMapMarkerAlt className="mb-4" size={48} />
             <div>{event.venue}</div>
           </div>
         </div>
 
-        <p className="text-gray-300 text-xl font-thin my-8 mx-8 md:mx-16 max-w-[85ch]">{event.description}</p>
+        <p className="text-gray-300 text-xl font-thin my-8 mx-8 md:mx-16 max-w-[85ch]">
+          {event.description}
+        </p>
       </div>
     </>
   );

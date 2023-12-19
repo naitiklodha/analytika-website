@@ -57,7 +57,6 @@ const TeamPage = ({ teamMembers }) => {
       return 0;
     }
 
-    // If role order is different, sort by role order
     return roleOrderA - roleOrderB;
   });
 
@@ -128,7 +127,7 @@ const TeamPage = ({ teamMembers }) => {
             </div>
           ))}
         </div>
-        <ul className="flex flex-wrap justify-center mt-6 md:mx-16">
+        <ul className="flex flex-wrap  max-w-[80vw] justify-center mt-6 md:mx-16">
           {filteredMembers.map((member) => (
             <TeamCard key={member._id} member={member} />
           ))}

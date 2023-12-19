@@ -30,7 +30,7 @@ const TeamPage = ({ teamMembers }) => {
       <h1 className="text-4xl font-extrabold my-6 text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
         Our Team
       </h1>
-      <ul className="flex flex-wrap justify-center mt-6">
+      <ul className="flex flex-wrap   justify-center mt-6">
         {teamMembers.map((member) => (
           <TeamCard member={member} key={member._id} />
         ))}
