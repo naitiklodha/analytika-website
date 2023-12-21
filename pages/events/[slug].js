@@ -12,7 +12,7 @@ export default function EventPage({ event }) {
   const pageTitle = event.name;
   const pageDescription = event.description;
   const ogImageUrl = "analytika-team.jpeg";
-  const siteUrl = "https://analytika-web.netlify.app/";
+  const siteUrl = "https://analytikanmims.com/";
   return (
     <>
       <Head>
