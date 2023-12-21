@@ -11,13 +11,14 @@ const TeamPage = ({ teamMembers }) => {
 
   const customRoleOrder = {
     "Faculty Mentor": 0,
-    President: 1,
-    "Joint President": 2,
-    "Vice President": 3,
-    Secretary: 4,
-    Treasurer: 5,
-    Founder: 6,
-    "Co-Founder": 7,
+        Founder: 1,
+    "Co-Founder": 2,
+    President: 3,
+    "Joint President": 4,
+    "Vice President": 5,
+    Secretary: 6,
+    Treasurer: 7,
+
     Head: 8,
     "Sub Head": 8,
   };
