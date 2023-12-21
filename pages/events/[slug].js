@@ -3,6 +3,7 @@ import { Carousel } from "@material-tailwind/react";
 import { FaCalendar, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function EventPage({ event }) {
   if (!event) {
@@ -11,7 +12,7 @@ export default function EventPage({ event }) {
   const pageTitle = event.name;
   const pageDescription = event.description;
   const ogImageUrl = "analytika-team.jpeg";
-  const siteUrl = "https://analytika-web.netlify.app/";
+  const siteUrl = "https://analytikanmims.com/";
   return (
     <>
       <Head>
@@ -36,22 +37,24 @@ export default function EventPage({ event }) {
         </h1>
 
         <Carousel
-          className="rounded-lg mb-6 "
+          className="rounded-lg my-6 w-[80%]"
           transition={{ duration: 2 }}
           loop
           autoplay
         >
           {event.gallery.map((image, index) => (
-            <img
+            <Image
               key={image}
               src={image}
+              width={500}
+              height={500}
               alt={`Event Image ${index}`}
-              className="w-full h-80 rounded-lg shadow-md object-cover"
+              className="w-full max-h-[70vh] rounded-lg shadow-md object-cover"
             />
           ))}
         </Carousel>
 
-        <div className="text-gray-300 flex text-center  flex-col md:flex-row justify-between rounded-md p-6 px-12 md:px-6 mx-8 bg-analytikaGreen text-xl md:mx-16">
+        <div className="text-gray-300 flex text-center mt-4 flex-col md:flex-row justify-between rounded-md p-6 px-12 md:px-6 mx-8 bg-analytikaGreen text-xl md:mx-16">
           <div className="mx-auto md:mx-16 flex flex-col p-4  items-center justify-center">
             <FaCalendar className="mb-4" size={48} />
             <div>
