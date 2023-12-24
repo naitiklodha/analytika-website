@@ -3,20 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useNextSanityImage } from "next-sanity-image";
 import sanityClient from "@/data/client";
-import React, { useState } from "react";
+import React from "react";
 
 function EventCard({ event }) {
   const imageProps = useNextSanityImage(sanityClient, event.image);
 
-  const truncateDescription = (description, limit) => {
-    const words = description.split(" ");
-    if (words.length > limit) {
-      return words.slice(0, limit).join(" ") + "...";
-    }
-    return description;
-  };
-
-  const truncatedDescription = truncateDescription(event.description, 15);
 
   return (
     <Link href={`/events/${event?.name}`}>

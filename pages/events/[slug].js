@@ -13,6 +13,16 @@ export default function EventPage({ event }) {
   const pageDescription = event.description;
   const ogImageUrl = "analytika-team.jpeg";
   const siteUrl = "https://analytikanmims.com/";
+
+  const splitDescriptionIntoParagraphs = (description) => {
+    const paragraphs = description.split('\n'); 
+
+    return paragraphs;
+  };
+
+
+  const descriptionParagraphs = splitDescriptionIntoParagraphs(event.description);
+
   return (
     <>
       <Head>
@@ -54,7 +64,7 @@ export default function EventPage({ event }) {
           ))}
         </Carousel>
 
-        <div className="text-gray-300 flex text-center mt-4 flex-col md:flex-row justify-between rounded-md p-6 px-12 md:px-6 mx-8 bg-analytikaGreen text-xl md:mx-16">
+        <div className="text-gray-400 flex text-center mt-4 flex-col md:flex-row justify-between rounded-md p-6 px-12 md:px-6 mx-8 bg-gradient-to-tr from-analytikaGreen to-yellow-900 text-xl md:mx-16">
           <div className="mx-auto md:mx-16 flex flex-col p-4  items-center justify-center">
             <FaCalendar className="mb-4" size={48} />
             <div>
@@ -79,32 +89,20 @@ export default function EventPage({ event }) {
           </div>
         </div>
 
-        <p className="text-gray-300 text-xl font-thin my-8 mx-8 md:mx-16 max-w-[85ch]">
-          {event.description}
-        </p>
+        <div className="text-gray-400 text-xl font-thin my-8 mx-8 md:mx-16 max-w-[85ch]">
+          {descriptionParagraphs.map((paragraph, index) => (
+            <p key={index} className="m-2">{paragraph}</p>
+          ))}
+        </div>
       </div>
     </>
   );
 }
 
-export async function getStaticPaths() {
-  const events = await fetchEventData();
-
-  const paths = events.map((event) => ({
-    params: { slug: event.name },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const slug = params.slug;
   const events = await fetchEventData();
   const event = events.find((e) => e.name === slug);
-
   return {
     props: { event },
   };
