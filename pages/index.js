@@ -82,6 +82,7 @@ export async function getServerSideProps() {
       },
       alt
     },
+    registrationLink,
     gallery {
       asset-> {
         _id,

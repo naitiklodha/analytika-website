@@ -7,7 +7,7 @@ import React from "react";
 
 function EventCardContent({ event, isUpcoming, buttonContent, imageProps }) {
   return (
-    <Link href={isUpcoming ? "/register" : `/events/${event?.name}`}>
+    <Link href={isUpcoming ? event.registrationLink: `/events/${event?.name}`} target="blank">
       <div className="relative overflow-hidden w-full cursor-pointer">
         <Image
           {...imageProps}
@@ -27,7 +27,7 @@ function EventCardContent({ event, isUpcoming, buttonContent, imageProps }) {
                 {event.description}
               </Typography>
             )}
-            <Button className="bg-gradient-to-tr from-analytikaYellow to-analytikaGreen mt-6 p-2 md:p-4 text-sm md:text-base">
+            <Button className="bg-gradient-to-tr from-analytikaYellow to-analytikaGreen mt-6 p-2 md:p-4 text-sm md:text-base" >
               {buttonContent}
             </Button>
           </div>
