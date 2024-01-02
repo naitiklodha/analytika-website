@@ -9,13 +9,12 @@ import ContactUs from "@/components/sections/contact-us";
 import BlogList from "@/components/sections/blogs";
 import Head from "next/head";
 
-
 export default function Home({ teamMembers, events, blogs }) {
   const pageTitle = "Analytika - The Data Science Club";
   const pageDescription =
     "Analytika, founded by Om Agrawal, Shreya Govil, and Vanshaj Ajmera, is a thriving data science club at NMIMS (Narsee Monjee Institute of Management Studies). We are dedicated to cultivating a data-centric mindset and fostering an environment for realizing the potential of data-driven insights.";
   const ogImageUrl = "analytika-team.jpeg";
-  const siteUrl = "https://analytika-web.netlify.app/";
+  const siteUrl = "https://analytikanmims.com";
   return (
     <>
       <Head>
@@ -39,13 +38,12 @@ export default function Home({ teamMembers, events, blogs }) {
         <section className="flex flex-col-reverse mt-8 md:flex-row justify-between space-x-4 md:space-x-0">
           <div className="md:w-1/2 text-center md:text-left">
             <h1 className="text-5xl text-start md:text-7xl font-extrabold mt-12 md:mt-20 tracking-wide mb-6 md:mb-0">
-              The one and only
-              <br />
+              The only <br />
               <span className="font-black text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
                 Data Science
               </span>
               <br />
-              club of NMIMS
+              club of NMIMS MPSTME
             </h1>
           </div>
           <div className="md:w-1/2">
@@ -76,6 +74,7 @@ export async function getServerSideProps() {
   const eventsQuery = groq`*[_type == 'events'] {
     name,
     description,
+    date,
     image {
       asset-> {
         _id,

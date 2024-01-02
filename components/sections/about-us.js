@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <article className="bg-analytikaBlack pt-20" id="about-us">
-      <div className="flex flex-col pt-8 items-center justify-center text-analytikaWhite">
+      <div className="flex flex-col pt-8 items-center justify-center text-gray-400">
         <h1 className="uppercase text-3xl md:text-4xl  font-bold mb-6">
           About{" "}
           <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-analytikaGreen to-analytikaYellow">
