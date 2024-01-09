@@ -8,7 +8,6 @@ const TeamPage = ({ teamMembers }) => {
     "Joint President": 2,
     "Secretary":3,
     "Treaurer":4,
-    "Vice President": 5,
   };
 
   teamMembers.sort((a, b) => {
