@@ -4,10 +4,11 @@ import TeamCard from "../TeamCard.js";
 const TeamPage = ({ teamMembers }) => {
   const customRoleOrder = {
     "Faculty Mentor": 0,
-    "President": 1,
-    "Joint President": 2,
-    "Secretary":3,
-    "Treaurer":4,
+    President: 3,
+    "Joint President": 4,
+    "Vice President": 7,
+    Secretary: 5,
+    Treasurer: 6,
   };
 
   teamMembers.sort((a, b) => {
