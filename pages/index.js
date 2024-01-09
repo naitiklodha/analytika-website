@@ -43,7 +43,7 @@ export default function Home({ teamMembers, events, blogs }) {
                 Data Science
               </span>
               <br />
-              club of NMIMS MPSTME
+              Club of NMIMS MPSTME
             </h1>
           </div>
           <div className="md:w-1/2">
