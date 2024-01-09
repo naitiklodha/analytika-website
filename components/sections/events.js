@@ -22,11 +22,7 @@ function EventCardContent({ event, isUpcoming, buttonContent, imageProps }) {
             >
               {event.name}
             </Typography>
-            {isUpcoming && (
-              <Typography className="mb-4 text-white text-sm md:text-base">
-                {event.description}
-              </Typography>
-            )}
+        
             <Button className="bg-gradient-to-tr from-analytikaYellow to-analytikaGreen mt-6 p-2 md:p-4 text-sm md:text-base" >
               {buttonContent}
             </Button>
