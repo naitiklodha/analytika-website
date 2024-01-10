@@ -9,7 +9,7 @@ const BlogList = ({ blogs }) => {
       <h1 className="text-4xl uppercase font-bold text-center my-8 bg-clip-text text-transparent bg-gradient-to-tr from-analytikaYellow to-analytikaGreen">
         Blogs
       </h1>
-      <ul className="grid grid-cols-1 place-items-center md:mx-8">
+      <ul className="grid grid-cols-1 gap-8 place-items-center md:mx-8">
         {blogs?.map((blog) => {
           const imageProps = useNextSanityImage(sanityClient, blog.thumbnail);
 
