@@ -15,13 +15,14 @@ export default function EventPage({ event }) {
   const siteUrl = "https://analytikanmims.com/";
 
   const splitDescriptionIntoParagraphs = (description) => {
-    const paragraphs = description.split('\n'); 
+    const paragraphs = description.split("\n");
 
     return paragraphs;
   };
 
-
-  const descriptionParagraphs = splitDescriptionIntoParagraphs(event.description);
+  const descriptionParagraphs = splitDescriptionIntoParagraphs(
+    event.description
+  );
 
   return (
     <>
@@ -91,7 +92,9 @@ export default function EventPage({ event }) {
 
         <div className="text-gray-400 text-xl font-thin my-8 mx-8 md:mx-16 max-w-[85ch]">
           {descriptionParagraphs.map((paragraph, index) => (
-            <p key={index} className="m-2">{paragraph}</p>
+            <p key={index} className="m-2">
+              {paragraph}
+            </p>
           ))}
         </div>
       </div>
@@ -103,6 +106,12 @@ export async function getServerSideProps({ params }) {
   const slug = params.slug;
   const events = await fetchEventData();
   const event = events.find((e) => e.name === slug);
+  console.log(event)
+  if (!event) {
+    return {
+      notFound: true, 
+    };
+  }
   return {
     props: { event },
   };
