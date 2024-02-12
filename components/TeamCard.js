@@ -13,12 +13,12 @@ const TeamCard=( {member} )=> {
         <Image
           {...imageProps}
           className="w-64 h-[17rem]  mx-auto rounded-lg"
-          alt={member.image.alt || ""}
+          alt={member.image.alt || member.name}
         />
       )}
-      <h2 className="text-xl text-center m-2 text-analytikaWhite mt-4">
+      <h3 className="text-xl text-center m-2 text-analytikaWhite mt-4">
         {member.name}
-      </h2>
+      </h3>
       <p className="text-lg text-center m-2 text-analytikaGreen mt-2">
         {member.role}
       </p>

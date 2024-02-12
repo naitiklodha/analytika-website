@@ -6,9 +6,9 @@ import sanityClient from "@/data/client";
 const BlogList = ({ blogs }) => {
   return (
     <div className="mb-8 pt-20" id="blogs">
-      <h1 className="text-4xl uppercase font-bold text-center my-8 bg-clip-text text-transparent bg-gradient-to-tr from-analytikaYellow to-analytikaGreen">
+      <h2 className="text-4xl uppercase font-bold text-center my-8 bg-clip-text text-transparent bg-gradient-to-tr from-analytikaYellow to-analytikaGreen">
         Blogs
-      </h1>
+      </h2>
       <ul className="grid grid-cols-1 gap-8 place-items-center md:mx-8">
         {blogs?.map((blog) => {
           const imageProps = useNextSanityImage(sanityClient, blog.thumbnail);
@@ -24,7 +24,7 @@ const BlogList = ({ blogs }) => {
                 {...imageProps}
                 width={200}
                 height={0}
-                alt={blog.thumbnail.alt || ""}
+                alt={blog.thumbnail.alt || blog.title}
               />
 
               <div className="flex flex-col justify-between p-4 leading-normal">

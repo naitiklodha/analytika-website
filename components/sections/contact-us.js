@@ -40,10 +40,10 @@ export default function Contact() {
   return (
     <section className="md:flex md:justify-center mt-16 pt-20" id="contact-us">
       <div className="max-w-md mx-6 md:max-w-xl md:mx-0 md:mr-16">
-        <h3 className="text-lg text-center md:text-left">Any queries?</h3>
-        <h1 className="font-semibold text-4xl md:text-6xl mt-4 text-center md:text-left text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
+        <p className="text-lg text-center md:text-left">Any queries?</p>
+        <h2 className="font-semibold text-4xl md:text-6xl mt-4 text-center md:text-left text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
           CONTACT US
-        </h1>
+        </h2>
         <div className="flex items-center md:items-start p-4 border-2 border-analytikaWhite rounded-md mt-6 transform hover:scale-105 transition-transform">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ export default function Contact() {
               fill="#FEFAFA"
             />
           </svg>
-          <h3 className="ml-4 text-lg">dscnmims@gmail.com</h3>
+          <p className="ml-4 text-lg">dscnmims@gmail.com</p>
         </div>
         <div className="mt-4 flex gap-8 justify-center md:justify-start">
        <Link href={"https://instagram.com/analytika.nmims"}><FaInstagram size={48} className="hover:text-analytikaGreen"/></Link> 
