@@ -65,7 +65,7 @@ export default function EventPage({ event }) {
           ))}
         </Carousel>
 
-        <div className="text-gray-400 flex text-center mt-4 flex-col md:flex-row justify-between rounded-md p-6 px-12 md:px-6 mx-8 bg-gradient-to-tr from-analytikaGreen to-yellow-900 text-xl md:mx-16">
+        <div className="text-gray-300 flex text-center mt-4 flex-col md:flex-row justify-between rounded-md p-6 px-12 md:px-6 mx-8 bg-gradient-to-tr from-analytikaGreen to-analytikaGreen text-xl md:mx-16">
           <div className="mx-auto md:mx-16 flex flex-col p-4  items-center justify-center">
             <FaCalendar className="mb-4" size={48} />
             <div>
@@ -105,6 +105,7 @@ export default function EventPage({ event }) {
 export async function getServerSideProps({ params }) {
   const slug = params.slug;
   const events = await fetchEventData();
+  console.log("Slud: ",slug);
   const event = events.find((e) => e.name === slug);
   console.log(event)
   if (!event) {
