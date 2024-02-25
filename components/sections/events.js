@@ -5,9 +5,17 @@ import { useNextSanityImage } from "next-sanity-image";
 import client from "@/data/client";
 import React from "react";
 
-function EventCardContent({ event, isUpcoming, buttonContent, imageProps }) {
+function EventCardContent({ event, isUpcoming, buttonContent, imageProps,key }) {
   return (
-    <Link href={isUpcoming ? event.registrationLink: `/events/${event?.name}`} target="blank">
+    <Link
+      href={
+        isUpcoming && event.registrationLink
+          ? event?.registrationLink
+          : `/events/${event?.name}`
+      }
+      target="blank"
+      key={key}
+    >
       <div className="relative overflow-hidden w-full cursor-pointer">
         <Image
           {...imageProps}
@@ -22,8 +30,8 @@ function EventCardContent({ event, isUpcoming, buttonContent, imageProps }) {
             >
               {event.name}
             </Typography>
-        
-            <Button className="bg-gradient-to-tr from-analytikaYellow to-analytikaGreen mt-6 p-2 md:p-4 text-sm md:text-base" >
+
+            <Button className="bg-gradient-to-tr from-analytikaYellow to-analytikaGreen mt-6 p-2 md:p-4 text-sm md:text-base">
               {buttonContent}
             </Button>
           </div>
