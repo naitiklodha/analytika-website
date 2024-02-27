@@ -5,7 +5,7 @@ export default function ReadMore() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("https://docs.google.com/forms/d/e/1FAIpQLSerGuP4er0P_YeWtde_EN8miZNrImD6VnxJlxSjGhReJ6ok1g/viewform")
+    router.push("https://forms.gle/QixKdk8CUGJs2r7X7")
       .then(() => {})
       .catch((error) => {});
   }, []);
