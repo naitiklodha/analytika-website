@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
 import { Button } from "@material-tailwind/react";
+import Image from "next/image";
 import Link from "next/link";
 export default function Page() {
   const pageTitle = "Data Summit 2.0";
@@ -46,8 +47,10 @@ export default function Page() {
             Data Carnival
           </h3>
           <div className="md:flex  items-center">
-            <img
+            <Image
               src="/images/carnival.jpeg"
+              width={500}
+              height={100}
               alt="Data Carnival"
               className="w-full mx-auto mb-8  md:w-[40%]"
             />
@@ -73,9 +76,11 @@ export default function Page() {
             Data Hunt
           </h3>
           <div className="md:flex flex-row-reverse gap-12  items-center">
-            <img
+            <Image
               src="/images/data-hunt.jpeg"
               alt="Data Carnival"
+              width={500}
+              height={100}
               className="w-full mx-auto mb-8  md:w-[40%]"
             />
             <div className="text-analytikaWhite mb-6 text-xl  ">
@@ -100,8 +105,10 @@ export default function Page() {
             Data Feud
           </h3>
           <div className="md:flex gap-12  items-center">
-            <img
+            <Image
               src="/images/data-feud.png"
+              width={500}
+              height={100}
               alt="Data Carnival"
               className="w-full mx-auto mb-8  md:w-[40%]"
             />
@@ -130,12 +137,14 @@ export default function Page() {
             Panel Discussion
           </h3>
           <div className="md:flex flex-row-reverse gap-12  items-center">
-            <img
+            <Image
               src="/images/panel.avif"
+              width={500}
+              height={100}
               alt="Data Carnival"
               className="w-full mx-auto mb-8  md:w-[40%]"
             />
-            <p className="text-analytikaWhite text-xl ">
+            <div className="text-analytikaWhite text-xl ">
               Join our free panel discussion focusing on current trends in data
               science, featuring presentations from experts on artificial
               intelligence, explainability, social impact, privacy, and emerging
@@ -147,7 +156,13 @@ export default function Page() {
               questions, and engage in networking with fellow data enthusiasts.
               Don't miss this chance to stay ahead of the curve and explore the
               hottest trends in data science!
-            </p>
+              <br></br>
+              <Link href="/panel-discussion" target="_blank">
+                <Button className="md:animate-bounce  bg-analytikaGreen  mt-6 p-4  text-sm md:text-base text-analytikaWhite">
+                  Register Now
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <h3
@@ -156,9 +171,11 @@ export default function Page() {
             Algo-Rhythm{" "}
           </h3>
           <div className="md:flex gap-12  items-center">
-            <img
+            <Image
               src="/images/algo-rhtym.jpeg"
               alt="Algo Rhythm"
+              width={500}
+              height={100}
               className="w-full mx-auto mb-8  md:w-[40%]"
             />
             <p className="text-analytikaWhite mb-4 text-xl ">
@@ -178,9 +195,11 @@ export default function Page() {
             Internship Fair{" "}
           </h3>
           <div className="md:flex flex-row-reverse gap-12  items-center">
-            <img
+            <Image
               src="/images/internship-fair.jpeg"
               alt="Internship Fair"
+              width={500}
+              height={100}
               className="w-full m-4 md:block md:w-[40%]"
             />
             <div className="text-analytikaWhite text-xl ">
