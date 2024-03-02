@@ -43,7 +43,7 @@ export default function Home({ teamMembers, events, blogs }) {
       <Navbar />
       {showPopup && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="p-8 bg-analytikaBlack rounded-lg relative">
+          <div className="p-8 bg-analytikaBlack m-4 rounded-lg relative">
             <button
               className="absolute top-2 right-2 text-gray-400 hover:text-gray-500"
               onClick={handlePopupClose}

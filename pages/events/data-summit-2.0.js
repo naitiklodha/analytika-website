@@ -48,11 +48,11 @@ export default function Page() {
           </h3>
           <div className="md:flex  items-center">
             <Image
-              src="/images/carnival.jpeg"
-              width={500}
-              height={100}
+              src="/images/carnival.jpg"
+              width={600}
+              height={200}
               alt="Data Carnival"
-              className="w-full mx-auto mb-8  md:w-[40%]"
+              className="w-full mx-auto mb-8"
             />
             <p className="text-analytikaWhite mb-6 text-xl md:ml-10 ">
               'Data Carnival' is a feast for the senses featuring delectable
@@ -106,7 +106,7 @@ export default function Page() {
           </h3>
           <div className="md:flex gap-12  items-center">
             <Image
-              src="/images/data-feud.png"
+              src="/images/data-feud.jpeg"
               width={500}
               height={100}
               alt="Data Carnival"
@@ -141,7 +141,7 @@ export default function Page() {
               src="/images/panel.jpg"
               width={500}
               height={100}
-              alt="Data Carnival"
+              alt="Panel Discussion"
               className="w-full mx-auto mb-8  md:w-[40%]"
             />
             <div className="text-analytikaWhite text-xl ">
