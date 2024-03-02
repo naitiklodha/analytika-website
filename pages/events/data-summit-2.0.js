@@ -138,7 +138,7 @@ export default function Page() {
           </h3>
           <div className="md:flex flex-row-reverse gap-12  items-center">
             <Image
-              src="/images/panel.avif"
+              src="/images/panel.jpg"
               width={500}
               height={100}
               alt="Data Carnival"
