@@ -37,38 +37,10 @@ export default function Page() {
         >
           Data Summit 2.0
         </h1>
-        <div className="p-4">
-          <h2 className={` my-4 text-4xl text-center font-bold ${textStyle}`}>
-            All 3 days (13th-15th March)
-          </h2>
-          <h3
-            className={`self-start my-4 mt-6 text-3xl font-bold ${textStyle}`}
-          >
-            Data Carnival
-          </h3>
-          <div className="md:flex  items-center">
-            <Image
-              src="/images/carnival.jpg"
-              width={600}
-              height={200}
-              alt="Data Carnival"
-              className="w-full mx-auto mb-8"
-            />
-            <p className="text-analytikaWhite mb-6 text-xl md:ml-10 ">
-              'Data Carnival' is a feast for the senses featuring delectable
-              food stalls,thrilling games, and a captivating photobooth. This
-              event isn't just about brands showcasing themselves; it's a lively
-              playground where visitors can indulge in irresistible treats,
-              enjoy exciting activities, and snag exclusive offers. Student can
-              immerse themselves in the festive atmosphere, as brands take
-              centre stage, promising a day of laughter,fun, and unforgettable
-              experiences.
-            </p>
-          </div>
-        </div>
+
         <div className="p-4">
           <h2 className={` my-6 text-4xl text-center font-bold ${textStyle}`}>
-            Day 1 (13th March)
+            Day 1 <br className="md:hidden"></br>(13th March)
           </h2>
           <h3
             className={`self-start my-2 mt-6 text-3xl font-bold ${textStyle}`}
@@ -131,7 +103,7 @@ export default function Page() {
         </div>
         <div className="p-4">
           <h2 className={` my-6 text-4xl font-bold text-center ${textStyle}`}>
-            Day 2 (14th March)
+            Day 2 <br className="md:hidden"></br>(14th March)
           </h2>
           <h3 className={` mt-6 mb-2 text-3xl font-bold ${textStyle}`}>
             Panel Discussion
@@ -189,7 +161,7 @@ export default function Page() {
         </div>
         <div className="p-4">
           <h2 className={` my-6 text-4xl font-bold ${textStyle} text-center `}>
-            Day 3 (15th March)
+            Day 3 <br className="md:hidden"></br>(15th March)
           </h2>
           <h3 className={`self-start my-4 text-3xl font-bold ${textStyle}`}>
             Internship Fair{" "}
@@ -220,6 +192,35 @@ export default function Page() {
                 </Button>
               </Link>
             </div>
+          </div>
+        </div>
+        <div className="p-4">
+          <h2 className={` my-4 text-4xl text-center font-bold ${textStyle}`}>
+            All 3 days <br className="md:hidden"></br>(13th-15th March)
+          </h2>
+          <h3
+            className={`self-start my-4 mt-6 text-3xl font-bold ${textStyle}`}
+          >
+            Data Carnival
+          </h3>
+          <div className="md:flex  items-center">
+            <Image
+              src="/images/carnival.jpg"
+              width={600}
+              height={200}
+              alt="Data Carnival"
+              className="w-full mx-auto mb-8"
+            />
+            <p className="text-analytikaWhite mb-6 text-xl md:ml-10 ">
+              'Data Carnival' is a feast for the senses featuring delectable
+              food stalls,thrilling games, and a captivating photobooth. This
+              event isn't just about brands showcasing themselves; it's a lively
+              playground where visitors can indulge in irresistible treats,
+              enjoy exciting activities, and snag exclusive offers. Student can
+              immerse themselves in the festive atmosphere, as brands take
+              centre stage, promising a day of laughter,fun, and unforgettable
+              experiences.
+            </p>
           </div>
         </div>
       </div>
