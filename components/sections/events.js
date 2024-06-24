@@ -26,12 +26,12 @@ function EventCardContent({ event, isUpcoming, buttonContent, imageProps,key }) 
           <div className="w-11/12 mx-auto text-center md:w-2/4">
             <Typography
               variant="h1"
-              className="mb-4 font-semibold leading-tight text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow text-xl md:text-3xl"
+              className="mb-4 font-semibold leading-tight text-transparent bg-clip-text bg-gradient-to-tr from-analytikaPurple to-analytikaBlue text-xl md:text-3xl"
             >
               {event.name}
             </Typography>
 
-            <Button className="bg-gradient-to-tr from-analytikaYellow to-analytikaGreen mt-6 p-2 md:p-4 text-sm md:text-base">
+            <Button className="bg-gradient-to-tr from-analytikaBlue to-analytikaPurple mt-6 p-2 md:p-4 text-sm md:text-base">
               {buttonContent}
             </Button>
           </div>
@@ -69,7 +69,7 @@ function EventSection({ events, isUpcoming }) {
 
   return (
     <div className="p-4 pt-20">
-      <h2 className="text-4xl mb-10 text-center uppercase font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow my-6">
+      <h2 className="text-4xl mb-10 text-center uppercase font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-analytikaPurple to-analytikaBlue my-6">
         {isUpcoming ? "Upcoming EVENTS" : "Past events"}
       </h2>
       <Carousel className="rounded-xl mx-auto">

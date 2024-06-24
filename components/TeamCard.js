@@ -19,10 +19,10 @@ const TeamCard=( {member} )=> {
       <h3 className="text-xl text-center m-2 text-analytikaWhite mt-4">
         {member.name}
       </h3>
-      <p className="text-lg text-center m-2 text-analytikaGreen mt-2">
+      <p className="text-lg text-center m-2 text-analytikaPurple mt-2">
         {member.role}
       </p>
-      <p className="text-lg text-center m-2 text-analytikaYellow">
+      <p className="text-lg text-center m-2 text-analytikaBlue">
         {member.department}
       </p>
     </li>

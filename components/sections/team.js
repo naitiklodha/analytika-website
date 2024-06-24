@@ -29,7 +29,7 @@ const TeamPage = ({ teamMembers }) => {
       className="flex flex-col items-center justify-center uppercase pt-20"
       id="team"
     >
-      <h2 className="text-4xl font-extrabold my-6 text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
+      <h2 className="text-4xl font-extrabold my-6 text-transparent bg-clip-text bg-gradient-to-tr from-analytikaPurple to-analytikaBlue">
         Our Team
       </h2>
       <ul className="flex flex-wrap   justify-center mt-6">
@@ -38,7 +38,7 @@ const TeamPage = ({ teamMembers }) => {
         ))}
       </ul>
       <Link href="/team">
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow mt-4 text-2xl cursor-pointer transition-transform hover:scale-105">
+        <h1 className="text-transparent bg-clip-text bg-gradient-to-tr from-analytikaPurple to-analytikaBlue mt-4 text-2xl cursor-pointer transition-transform hover:scale-105">
           View all
         </h1>
       </Link>

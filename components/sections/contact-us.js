@@ -41,7 +41,7 @@ export default function Contact() {
     <section className="md:flex md:justify-center mt-16 pt-20" id="contact-us">
       <div className="max-w-md mx-6 md:max-w-xl md:mx-0 md:mr-16">
         <p className="text-lg text-center md:text-left">Any queries?</p>
-        <h2 className="font-semibold text-4xl md:text-6xl mt-4 text-center md:text-left text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
+        <h2 className="font-semibold text-4xl md:text-6xl mt-4 text-center md:text-left text-transparent bg-clip-text bg-gradient-to-tr from-analytikaPurple to-analytikaBlue">
           CONTACT US
         </h2>
         <div className="flex items-center md:items-start p-4 border-2 border-analytikaWhite rounded-md mt-6 transform hover:scale-105 transition-transform">
@@ -60,8 +60,8 @@ export default function Contact() {
           <p className="ml-4 text-lg">dscnmims@gmail.com</p>
         </div>
         <div className="mt-4 flex gap-8 justify-center md:justify-start">
-       <Link href={"https://instagram.com/analytika.nmims"}><FaInstagram size={48} className="hover:text-analytikaGreen"/></Link> 
-              <Link href={"https://www.linkedin.com/company/analytika-nmims/"}><FaLinkedin size={48} className="hover:text-analytikaGreen"/></Link> 
+       <Link href={"https://instagram.com/analytika.nmims"}><FaInstagram size={48} className="hover:text-analytikaPurple"/></Link> 
+              <Link href={"https://www.linkedin.com/company/analytika-nmims/"}><FaLinkedin size={48} className="hover:text-analytikaPurple"/></Link> 
 
         </div>
       </div>
@@ -96,7 +96,7 @@ export default function Contact() {
           ></textarea>
           <button
             type="submit"
-            className="p-4 bg-gradient-to-b from-analytikaGreen to bg-analytikaYellow rounded-lg text-analytikaWhite hover:shadow-md transition duration-300"
+            className="p-4 bg-gradient-to-b from-analytikaPurple to bg-analytikaBlue rounded-lg text-analytikaWhite hover:shadow-md transition duration-300"
           >
             Submit
           </button>

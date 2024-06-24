@@ -6,7 +6,7 @@ export default function About() {
       <div className="flex flex-col pt-8 items-center justify-center text-gray-400">
         <h2 className="uppercase text-3xl md:text-4xl  font-bold mb-6">
           About{" "}
-          <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-analytikaGreen to-analytikaYellow">
+          <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-analytikaPurple to-analytikaBlue">
             Analytika
           </span>
         </h2>

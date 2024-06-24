@@ -6,7 +6,7 @@ import sanityClient from "@/data/client";
 const BlogList = ({ blogs }) => {
   return (
     <div className="mb-8 pt-20" id="blogs">
-      <h2 className="text-4xl uppercase font-bold text-center my-8 bg-clip-text text-transparent bg-gradient-to-tr from-analytikaYellow to-analytikaGreen">
+      <h2 className="text-4xl uppercase font-bold text-center my-8 bg-clip-text text-transparent bg-gradient-to-tr from-analytikaBlue to-analytikaPurple">
         Blogs
       </h2>
       <ul className="grid grid-cols-1 gap-8 place-items-center md:mx-8">
@@ -28,7 +28,7 @@ const BlogList = ({ blogs }) => {
               />
 
               <div className="flex flex-col justify-between p-4 leading-normal">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-transparent bg-gradient-to-tr from-analytikaYellow to-analytikaGreen bg-clip-text ">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-transparent bg-gradient-to-tr from-analytikaBlue to-analytikaPurple bg-clip-text ">
                   {blog.title}
                 </h5>
                 <p className="mb-3 font-normal text-gray-400">

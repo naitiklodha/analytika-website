@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   const activeLinkClass =
-    "block py-2 pl-3 pr-4 text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow";
+    "block py-2 pl-3 pr-4 text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-analytikaPurple to-analytikaBlue";
 
   const currentPathname = router.pathname;
 
@@ -100,7 +100,7 @@ const Navbar = () => {
                     className={
                       currentPathname === path
                         ? `${activeLinkClass}`
-                        : `block text-analytikaWhite py-2 pl-3 pr-4 hover:text-analytikaGreen`
+                        : `block text-analytikaWhite py-2 pl-3 pr-4 hover:text-analytikaPurple`
                     }
                     aria-current={currentPathname === path ? "page" : undefined}
                   >

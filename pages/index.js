@@ -12,7 +12,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function Home({ teamMembers, events, blogs }) {
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   const pageTitle = "Analytika - The Data Science Club";
   const pageDescription =
@@ -68,7 +68,7 @@ export default function Home({ teamMembers, events, blogs }) {
               March 2024.{" "}
               <Link
                 href="/events/data-summit-2.0"
-                className="text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow underline"
+                className="text-transparent bg-clip-text bg-gradient-to-tr from-analytikaPurple to-analytikaBlue underline"
                 onClick={handlePopupClose}
                 target="blank"
               >
@@ -85,7 +85,7 @@ export default function Home({ teamMembers, events, blogs }) {
           <div className="md:w-1/2 text-center md:text-left">
             <h1 className="text-5xl text-start md:text-7xl font-extrabold mt-12 md:mt-20 tracking-wide mb-6 md:mb-0">
               The only <br />
-              <span className="font-black text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow">
+              <span className="font-black text-transparent bg-clip-text bg-gradient-to-tr from-analytikaPurple to-analytikaBlue">
                 Data Science
               </span>
               <br />
