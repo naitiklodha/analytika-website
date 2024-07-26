@@ -12,7 +12,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function Home({ teamMembers, events, blogs }) {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
 
   const pageTitle = "Analytika - The Data Science Club";
   const pageDescription =
@@ -64,15 +64,15 @@ export default function Home({ teamMembers, events, blogs }) {
               </svg>
             </button>
             <p className="text-lg">
-              We're having our flagship event Data Summit from 13th to 15th
-              March 2024.{" "}
+              Executive Recruitments are Live !!{" "}
+       <br/>
               <Link
-                href="/events/data-summit-2.0"
+                href="https://forms.gle/7GhU17gJSDazywYZA"
                 className="text-transparent bg-clip-text bg-gradient-to-tr from-analytikaGreen to-analytikaYellow underline"
                 onClick={handlePopupClose}
                 target="blank"
               >
-                Click here to know more.
+                Click here to apply and join our family.
               </Link>
             </p>
           </div>
