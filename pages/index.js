@@ -12,7 +12,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function Home({ teamMembers, events, blogs }) {
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   const pageTitle = "Analytika - The Data Science Club";
   const pageDescription =
