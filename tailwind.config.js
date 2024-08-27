@@ -14,9 +14,10 @@ export default withMT({
 			},
 			colors: {
 				analytikaBlack: "#181818",
-				analytikaYellow: "#F5EC4D",
-				analytikaGreen: "#319E47",
+				analytikaYellow: "#3586FF",
+				analytikaGreen: "#870EE6",
 				analytikaWhite: "#F7F1E5",
+				/**green refers to purple and yellow refers to blue */
 			},
 		},
 	},
